@@ -321,34 +321,17 @@ function App() {
         }} />
 
         {/* Top Header Row */}
-        <header style={{ 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center', 
-          width: '100%', 
-          zIndex: 10,
-          position: 'relative'
-        }}>
-          <span style={{ fontSize: '0.85rem', fontWeight: 700, letterSpacing: '2.5px', color: '#eaeaea', textTransform: 'uppercase' }}>
+        <header className="hero-header">
+          <span style={{ fontSize: 'clamp(0.7rem, 2.5vw, 0.85rem)', fontWeight: 700, letterSpacing: '2.5px', color: '#eaeaea', textTransform: 'uppercase' }}>
             AHMAD SYAH LUBIS
           </span>
-          <span style={{ fontSize: '0.85rem', fontWeight: 600, letterSpacing: '2px', color: '#888888' }}>
+          <span style={{ fontSize: 'clamp(0.7rem, 2.5vw, 0.85rem)', fontWeight: 600, letterSpacing: '2px', color: '#888888' }}>
             ©2026
           </span>
         </header>
 
         {/* Editorial Sub-Nav Bar (Cleanly placed below top bar, matching reference) */}
-        <div style={{
-          position: 'absolute',
-          top: '72px',
-          left: 0,
-          right: 0,
-          padding: '0 48px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          zIndex: 10
-        }}>
+        <div className="hero-subnav">
           <div style={{ display: 'flex', gap: '28px' }}>
             <a href="#home" style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '2px', color: '#fff', textTransform: 'uppercase' }}>HOME</a>
             <a href="#projects" style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '2px', color: '#999', textTransform: 'uppercase', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color='#fff'} onMouseOut={e => e.target.style.color='#999'}>PROJECTS</a>
@@ -362,43 +345,12 @@ function App() {
         </div>
 
         {/* Giant Background Typography */}
-        <h1 style={{ 
-          position: 'absolute', 
-          top: '44%', 
-          left: '50%', 
-          transform: 'translate(-50%, -50%)', 
-          fontSize: 'clamp(4.5rem, 18.5vw, 17rem)', 
-          fontFamily: "'Syne', sans-serif",
-          fontWeight: 900, 
-          color: '#ffffff', 
-          whiteSpace: 'nowrap', 
-          zIndex: 1,
-          letterSpacing: '-0.03em',
-          margin: 0,
-          lineHeight: 0.85,
-          userSelect: 'none',
-          pointerEvents: 'none',
-          textAlign: 'center'
-        }}>
+        <h1 className="hero-title">
           AHMAD
         </h1>
 
         {/* Foreground Transparent Portrait */}
-        <div style={{ 
-          position: 'absolute', 
-          bottom: 0, 
-          left: '50%', 
-          transform: 'translateX(-50%)', 
-          zIndex: 2, 
-          height: '84vh', 
-          maxHeight: '820px',
-          display: 'flex', 
-          alignItems: 'flex-end', 
-          justifyContent: 'center',
-          pointerEvents: 'none',
-          maskImage: 'linear-gradient(to bottom, black 82%, transparent 100%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, black 82%, transparent 100%)'
-        }}>
+        <div className="hero-img-container">
           <img 
             src="/assets/foto ahmad/ahmad_nobg.png" 
             alt="Ahmad Syah Lubis" 
@@ -412,26 +364,14 @@ function App() {
         </div>
 
         {/* Left Side Content - Upper */}
-        <div style={{ 
-          position: 'absolute', 
-          top: '59%', 
-          left: '5%', 
-          zIndex: 4, 
-          maxWidth: '240px' 
-        }}>
+        <div className="hero-text-left-upper">
           <p style={{ fontSize: '0.85rem', color: '#c8c8c8', lineHeight: '1.6', margin: 0 }}>
             We build <strong style={{ color: '#ffffff', fontWeight: 700 }}>digital solutions</strong> through robust backend logic and modern UI design.
           </p>
         </div>
 
         {/* Left Side Content - Lower */}
-        <div style={{ 
-          position: 'absolute', 
-          bottom: '12%', 
-          left: '5%', 
-          zIndex: 4, 
-          maxWidth: '270px' 
-        }}>
+        <div className="hero-text-left-lower">
           <p style={{ fontSize: '0.82rem', color: '#909090', lineHeight: '1.6', margin: 0 }}>
             A creative software engineer shaping backend & full stack architectures.<br/>
             <span style={{ color: '#c0c0c0' }}>Lulusan Sistem Informasi IPK 3.90.</span>
@@ -439,14 +379,7 @@ function App() {
         </div>
 
         {/* Right Side Content - Upper */}
-        <div style={{ 
-          position: 'absolute', 
-          top: '59%', 
-          right: '5%', 
-          zIndex: 4, 
-          textAlign: 'right',
-          maxWidth: '220px'
-        }}>
+        <div className="hero-text-right-upper">
           <p style={{ fontSize: '0.88rem', color: '#e0e0e0', margin: 0, fontWeight: 600 }}>
             Backend Developer
             <br/>
@@ -455,51 +388,13 @@ function App() {
         </div>
 
         {/* Circular "START A PROJECT" Button */}
-        <a href="#contact" style={{ 
-          position: 'absolute', 
-          bottom: '18%', 
-          right: 'calc(50% - 290px)', 
-          zIndex: 5, 
-          width: '125px', 
-          height: '125px', 
-          borderRadius: '50%', 
-          background: '#ffffff', 
-          color: '#000000', 
-          display: 'flex', 
-          flexDirection: 'column',
-          justifyContent: 'center', 
-          alignItems: 'center', 
-          textAlign: 'center',
-          textDecoration: 'none', 
-          fontWeight: 800,
-          fontSize: '0.72rem',
-          letterSpacing: '1px',
-          lineHeight: '1.3',
-          boxShadow: '0 15px 35px rgba(0,0,0,0.6)',
-          transition: 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease',
-          cursor: 'pointer'
-        }} 
-        onMouseOver={e => {
-          e.currentTarget.style.transform = 'scale(1.1) rotate(6deg)';
-          e.currentTarget.style.boxShadow = '0 20px 45px rgba(255,255,255,0.25)';
-        }} 
-        onMouseOut={e => {
-          e.currentTarget.style.transform = 'scale(1) rotate(0deg)';
-          e.currentTarget.style.boxShadow = '0 15px 35px rgba(0,0,0,0.6)';
-        }}>
+        <a href="#contact" className="hero-start-btn">
           <span>START A</span>
           <span>PROJECT</span>
         </a>
 
         {/* Bottom Floating Pill Badges */}
-        <footer style={{ 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center', 
-          width: '100%', 
-          zIndex: 10,
-          position: 'relative'
-        }}>
+        <footer className="hero-footer-pills">
           <a href="#contact" style={{ 
             display: 'inline-flex', 
             alignItems: 'center', 
@@ -581,7 +476,7 @@ function App() {
           <p style={{ color: 'var(--text-secondary)' }}>Professional achievements and skills verified.</p>
         </div>
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '40px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '40px' }}>
           {certifications.map((cert, index) => (
             <div key={cert.id} className={`glass-card animate-on-scroll delay-${index * 100}`} style={{ display: 'flex', flexDirection: 'column', padding: '24px' }}>
               <div style={{ width: '100%', height: '280px', borderRadius: '12px', overflow: 'hidden', marginBottom: '24px', border: '1px solid var(--glass-border)', position: 'relative', group: 'cert-img' }}>
