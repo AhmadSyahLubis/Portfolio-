@@ -344,14 +344,10 @@ function App() {
           </div>
         </div>
 
-        {/* Giant Background Typography (Layered) */}
-        <div className="hero-title-stack">
-          <span className="hero-text-outline">AHMAD</span>
-          <span className="hero-text-outline">AHMAD</span>
-          <span className="hero-text-solid">AHMAD</span>
-          <span className="hero-text-outline">AHMAD</span>
-          <span className="hero-text-outline">AHMAD</span>
-        </div>
+        {/* Giant Background Typography */}
+        <h1 className="hero-title">
+          AHMAD
+        </h1>
 
         {/* Foreground Transparent Portrait */}
         <div className="hero-img-container">
