@@ -366,24 +366,21 @@ function App() {
         {/* Left Side Content - Upper */}
         <div className="hero-text-left-upper">
           <p style={{ fontSize: '0.85rem', color: '#c8c8c8', lineHeight: '1.6', margin: 0 }}>
-            We build <strong style={{ color: '#ffffff', fontWeight: 700 }}>digital solutions</strong> through robust backend logic and modern UI design.
+            We build <strong style={{ color: '#ffffff', fontWeight: 700 }}>digital solutions</strong> through robust full stack architecture and modern UI design.
           </p>
         </div>
 
         {/* Left Side Content - Lower */}
         <div className="hero-text-left-lower">
           <p style={{ fontSize: '0.82rem', color: '#909090', lineHeight: '1.6', margin: 0 }}>
-            A creative software engineer shaping backend & full stack architectures.<br/>
-            <span style={{ color: '#c0c0c0' }}>Lulusan Sistem Informasi IPK 3.90.</span>
+            A creative software engineer shaping modern full stack architectures.
           </p>
         </div>
 
         {/* Right Side Content - Upper */}
         <div className="hero-text-right-upper">
-          <p style={{ fontSize: '0.88rem', color: '#e0e0e0', margin: 0, fontWeight: 600 }}>
-            Backend Developer
-            <br/>
-            <span style={{ color: '#888888', fontWeight: 400, fontSize: '0.82rem' }}>& Full Stack Engineer</span>
+          <p style={{ fontSize: '1rem', color: '#e0e0e0', margin: 0, fontWeight: 700, letterSpacing: '0.5px' }}>
+            Full Stack Engineer
           </p>
         </div>
 
