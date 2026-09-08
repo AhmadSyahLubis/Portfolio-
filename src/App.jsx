@@ -22,7 +22,8 @@ const projects = [
       { src: '/assets/project/zoom-monitor/schedule.png', caption: 'Jadwal Meeting' },
       { src: '/assets/project/zoom-monitor/search and booking.png', caption: 'Search & Booking' },
       { src: '/assets/project/zoom-monitor/cloud recording.png', caption: 'Cloud Recording' },
-    ]
+    ],
+    url: 'https://ptpn3.co.id/zoom-monitor'
   },
   {
     id: 2,
@@ -36,7 +37,8 @@ const projects = [
       { src: '/assets/project/BRM-QuickAccess/kelola memo (admin).png', caption: 'Kelola Memo (Admin)' },
       { src: '/assets/project/BRM-QuickAccess/kelola aplikasi (admin).png', caption: 'Kelola Aplikasi (Admin)' },
       { src: '/assets/project/BRM-QuickAccess/kelola user (admin).png', caption: 'Kelola User (Admin)' },
-    ]
+    ],
+    url: 'https://ptpn3.co.id/smart-book/dashboard'
   }
 ];
 
@@ -165,10 +167,38 @@ function ProjectScrollShowcase({ project, index }) {
                   ))}
                 </div>
             </div>
-            <div style={{ flex: '1 1 350px', display: 'flex', alignItems: 'center' }}>
+            <div style={{ flex: '1 1 350px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '16px' }}>
                 <p style={{ color: '#bbb', fontSize: 'clamp(0.8rem, 2vw, 0.9rem)', margin: 0, lineHeight: 1.6, background: 'rgba(0,0,0,0.3)', padding: '12px 16px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
                   {project.description}
                 </p>
+                {project.url && (
+                  <div>
+                    <a href={project.url} target="_blank" rel="noreferrer" style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      padding: '8px 20px',
+                      borderRadius: '50px',
+                      background: 'var(--accent-red)',
+                      color: '#ffffff',
+                      fontSize: '0.8rem',
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                      boxShadow: '0 4px 15px rgba(220, 38, 38, 0.3)',
+                      transition: 'all 0.2s ease',
+                    }} 
+                    onMouseOver={e => {
+                      e.currentTarget.style.transform = 'translateY(-2px)';
+                      e.currentTarget.style.boxShadow = '0 6px 20px rgba(220, 38, 38, 0.4)';
+                    }} 
+                    onMouseOut={e => {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(220, 38, 38, 0.3)';
+                    }}>
+                      Visit Live Website ↗
+                    </a>
+                  </div>
+                )}
             </div>
         </div>
 
