@@ -108,11 +108,13 @@ function ProjectScrollShowcase({ project, index }) {
     const handleScroll = () => {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
-      const scrollProgress = -rect.top;
       const windowHeight = window.innerHeight;
+      const stickyTop = windowHeight * 0.1; // 10vh
+      const scrollProgress = stickyTop - rect.top;
       
       if (scrollProgress >= 0) {
-        let idx = Math.floor(scrollProgress / windowHeight);
+        const scrollStep = windowHeight * 0.6;
+        let idx = Math.floor(scrollProgress / scrollStep);
         if (idx < 0) idx = 0;
         if (idx >= project.screenshots.length) idx = project.screenshots.length - 1;
         setActiveIndex(idx);
@@ -130,85 +132,90 @@ function ProjectScrollShowcase({ project, index }) {
     <div 
       ref={containerRef} 
       style={{ 
-        height: `${project.screenshots.length * 100}vh`, 
+        height: `${project.screenshots.length * 60 + 100}vh`, 
         position: 'relative',
-        marginBottom: '60px'
+        marginBottom: '100px'
       }}
     >
+      {/* Normal Document Flow Text (Scrolls away naturally) */}
+      <div style={{ maxWidth: '1200px', width: '100%', margin: '0 auto 40px auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '24px', padding: '0 20px', boxSizing: 'border-box', position: 'relative', zIndex: 50 }}>
+          <div style={{ flex: '1 1 400px' }}>
+              <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: 'clamp(1.4rem, 4vw, 2.5rem)', fontWeight: 900, color: '#fff', margin: '0 0 12px 0' }}>
+                <span style={{ color: 'var(--accent-red)', marginRight: '10px' }}>0{index + 1}.</span>
+                {project.title}
+              </h3>
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                {project.tags.map(tag => (
+                  <span key={tag} style={{
+                    fontSize: '0.7rem', padding: '5px 12px', borderRadius: '50px',
+                    background: 'rgba(255,255,255,0.08)', color: '#eee',
+                    border: '1px solid rgba(255,255,255,0.15)', fontWeight: 500
+                  }}>{tag}</span>
+                ))}
+              </div>
+          </div>
+          <div style={{ flex: '1 1 350px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '16px' }}>
+              <p style={{ color: '#bbb', fontSize: 'clamp(0.8rem, 2vw, 0.9rem)', margin: 0, lineHeight: 1.6, background: 'rgba(0,0,0,0.3)', padding: '16px 20px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                {project.description}
+              </p>
+              {project.url && (
+                <div>
+                  <a href={project.url} target="_blank" rel="noreferrer" style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '8px 20px',
+                    borderRadius: '50px',
+                    background: 'var(--accent-red)',
+                    color: '#ffffff',
+                    fontSize: '0.8rem',
+                    fontWeight: 600,
+                    textDecoration: 'none',
+                    boxShadow: '0 4px 15px rgba(220, 38, 38, 0.3)',
+                    transition: 'all 0.2s ease',
+                  }} 
+                  onMouseOver={e => {
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.boxShadow = '0 6px 20px rgba(220, 38, 38, 0.4)';
+                  }} 
+                  onMouseOut={e => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 4px 15px rgba(220, 38, 38, 0.3)';
+                  }}>
+                    Visit Live Website ↗
+                  </a>
+                </div>
+              )}
+          </div>
+      </div>
+
+      {/* Sticky Image Modal (Contained Card) */}
       <div 
         style={{ 
           position: 'sticky', 
-          top: 0, 
-          height: '100vh', 
-          width: '100%',
+          top: '10vh', 
+          height: '80vh', 
+          width: '95%',
+          maxWidth: '1200px',
+          margin: '0 auto',
           display: 'flex', 
           flexDirection: 'column', 
           alignItems: 'center', 
           justifyContent: 'center',
           overflow: 'hidden',
           background: 'radial-gradient(circle at center, rgba(30, 30, 35, 0.6) 0%, rgba(10, 10, 12, 0.98) 70%, #050505 100%)',
-          padding: '100px 20px 40px 20px',
-          boxSizing: 'border-box'
+          borderRadius: '24px',
+          border: '1px solid rgba(255,255,255,0.08)',
+          padding: '20px',
+          boxSizing: 'border-box',
+          boxShadow: '0 20px 50px rgba(0,0,0,0.5)'
         }}
       >
-        <div style={{ maxWidth: '1200px', width: '100%', marginBottom: '24px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '16px', zIndex: 50 }}>
-            <div style={{ flex: '1 1 400px' }}>
-                <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: 'clamp(1.4rem, 4vw, 2.5rem)', fontWeight: 900, color: '#fff', margin: '0 0 12px 0' }}>
-                  <span style={{ color: 'var(--accent-red)', marginRight: '10px' }}>0{index + 1}.</span>
-                  {project.title}
-                </h3>
-                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                  {project.tags.map(tag => (
-                    <span key={tag} style={{
-                      fontSize: '0.7rem', padding: '5px 12px', borderRadius: '50px',
-                      background: 'rgba(255,255,255,0.08)', color: '#eee',
-                      border: '1px solid rgba(255,255,255,0.15)', fontWeight: 500
-                    }}>{tag}</span>
-                  ))}
-                </div>
-            </div>
-            <div style={{ flex: '1 1 350px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '16px' }}>
-                <p style={{ color: '#bbb', fontSize: 'clamp(0.8rem, 2vw, 0.9rem)', margin: 0, lineHeight: 1.6, background: 'rgba(0,0,0,0.3)', padding: '12px 16px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                  {project.description}
-                </p>
-                {project.url && (
-                  <div>
-                    <a href={project.url} target="_blank" rel="noreferrer" style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      padding: '8px 20px',
-                      borderRadius: '50px',
-                      background: 'var(--accent-red)',
-                      color: '#ffffff',
-                      fontSize: '0.8rem',
-                      fontWeight: 600,
-                      textDecoration: 'none',
-                      boxShadow: '0 4px 15px rgba(220, 38, 38, 0.3)',
-                      transition: 'all 0.2s ease',
-                    }} 
-                    onMouseOver={e => {
-                      e.currentTarget.style.transform = 'translateY(-2px)';
-                      e.currentTarget.style.boxShadow = '0 6px 20px rgba(220, 38, 38, 0.4)';
-                    }} 
-                    onMouseOut={e => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 4px 15px rgba(220, 38, 38, 0.3)';
-                    }}>
-                      Visit Live Website ↗
-                    </a>
-                  </div>
-                )}
-            </div>
-        </div>
-
         {/* Modal container */}
         <div style={{
           position: 'relative',
           width: '100%',
-          maxWidth: '1200px',
-          flex: 1,
-          minHeight: '0',
+          height: '100%',
           perspective: '1500px'
         }}>
           {project.screenshots.map((shot, i) => {
