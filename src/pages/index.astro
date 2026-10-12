@@ -31,8 +31,7 @@ import { profile, projects, tourismScreenshots, experience, skillGroups, certifi
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="container hero-layout">
           <div class="hero-content">
-            <div class="status-line"><span class="status-dot"></span>{profile.role} <span class="status-separator">/</span> {profile.location}</div>
-            <p class="hero-kicker">BACKEND · FRONTEND · MOBILE</p>
+            <div class="hero-byline"><span>{profile.role}</span><span>{profile.location}</span></div>
             <h1 id="hero-title"><span>Ahmad Syah </span><em>Lubis.</em></h1>
             <p class="hero-description">Saya mengembangkan produk digital dari API dan sistem backend, antarmuka web, hingga aplikasi mobile dengan perhatian pada kebutuhan pengguna.</p>
             <div class="hero-actions"><a class="button button-primary" href="#projects">Jelajahi proyek <span aria-hidden="true">↗</span></a><a class="button button-secondary" href={`mailto:${profile.email}`}>Hubungi saya <span aria-hidden="true">→</span></a></div>
