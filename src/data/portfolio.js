@@ -20,11 +20,11 @@ export const projects = [
     stack: ['Laravel 11', 'Livewire 4', 'Alpine.js', 'Tailwind CSS', 'MySQL'],
     url: 'https://ptpn3.co.id/zoom-monitor',
     screenshots: [
+      { src: '/assets/project/zoom-monitor/login page.png', caption: 'Halaman login' },
       { src: '/assets/project/zoom-monitor/dashboard.png', caption: 'Dashboard monitoring' },
       { src: '/assets/project/zoom-monitor/schedule.png', caption: 'Jadwal meeting' },
       { src: '/assets/project/zoom-monitor/search and booking.png', caption: 'Pencarian dan booking' },
       { src: '/assets/project/zoom-monitor/cloud recording.png', caption: 'Cloud recording' },
-      { src: '/assets/project/zoom-monitor/login page.png', caption: 'Halaman login' },
     ],
   },
   {
