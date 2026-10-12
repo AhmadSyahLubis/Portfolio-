@@ -28,7 +28,6 @@ h1,h2,h3{font-family:Manrope,sans-serif}
 .topbar-nav .nav-contact{display:inline-flex;align-items:center;gap:8px;color:#075e55;font-weight:800}
 .hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
 .hero:before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:#26b49c;filter:blur(170px);opacity:.12;right:-180px;top:50px}
-.hero:after{content:'';position:absolute;inset:0;background:url('/assets/patterns/ornamental-scroll.png') repeat center/560px auto;filter:invert(1);opacity:.04;pointer-events:none}
 .hero-layout{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:80px;min-height:705px;padding-top:140px;padding-bottom:64px}
 .hero-content{position:relative;z-index:2;padding:42px 0}
 .hero-byline{display:flex;align-items:baseline;justify-content:space-between;gap:20px;max-width:520px;padding-bottom:13px;border-bottom:1px solid #3b5162;margin-bottom:35px;font-size:12px;line-height:1.5}
