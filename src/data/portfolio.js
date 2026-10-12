@@ -47,7 +47,7 @@ export const projects = [
 ];
 
 export const tourismScreenshots = [
-  { src: '/assets/project/sumut-cerdas/overview.png', caption: 'Beranda Sumut Cerdas' },
+  { src: '/assets/project/sumut-cerdas/home-culture.png', caption: 'Beranda Sumut Cerdas' },
   { src: '/assets/project/sumut-cerdas/destinations.png', caption: 'Daftar destinasi wisata' },
   { src: '/assets/project/sumut-cerdas/destination-bawomataluo.png', caption: 'Detail Desa Bawomataluo' },
   { src: '/assets/project/sumut-cerdas/heritage-maimun.png', caption: 'Detail Istana Maimun' },
