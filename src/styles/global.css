@@ -94,6 +94,7 @@ h1 em,h2 em{font-style:normal;color:var(--teal)}
 .project-brief-label{color:#168c7a}
 .project-brief h4{font-size:clamp(1.75rem,2.8vw,2.6rem);line-height:1.2;letter-spacing:-.05em;margin:20px 0 14px}
 .project-brief-main p{max-width:490px;color:#607381;font-size:15px;line-height:1.75;margin:0}
+.project-brief-link{margin-top:22px}
 .project-brief-detail{border-left:1px solid #dce7e8;padding-left:34px}
 .project-brief-detail span{color:#168c7a;font-size:10px;font-weight:800;letter-spacing:.14em}
 .project-brief-detail p{font-size:13px;line-height:1.75;color:#526977;margin:14px 0 0}
