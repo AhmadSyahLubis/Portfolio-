@@ -6,9 +6,12 @@ export const profile = {
   linkedin: 'https://linkedin.com/in/ahmadsyahlubis',
   github: 'https://github.com/ahmadsyahlubis',
   instagram: 'https://www.instagram.com/ahmadsyah_62/',
+  cv: '/assets/Ahmad_Syah_Lubis_CV.pdf',
 };
 
 export const displayImage = (path) => path.replace('/assets/', '/assets/optimized/').replace(/\.png$/, '.webp');
+
+export const displayLogo = (path) => path.replace('/assets/logos/', '/assets/optimized/logos/').replace(/\.png$/, '.webp');
 
 export const projects = [
   {
@@ -20,6 +23,7 @@ export const projects = [
     contribution: 'Membangun pemeriksaan ketersediaan lintas akun, jadwal terpusat, recurring meeting, dan dashboard cloud recording.',
     stack: ['Laravel 11', 'Livewire 4', 'Alpine.js', 'Tailwind CSS', 'MySQL'],
     url: 'https://ptpn3.co.id/zoom-monitor',
+    internal: true,
     screenshots: [
       { src: '/assets/project/zoom-monitor/login page.png', caption: 'Halaman login' },
       { src: '/assets/project/zoom-monitor/dashboard.png', caption: 'Dashboard monitoring' },
@@ -37,6 +41,7 @@ export const projects = [
     contribution: 'Mengembangkan dashboard, pengelolaan memo dan aplikasi, serta otorisasi untuk admin dan pengguna.',
     stack: ['Laravel', 'Alpine.js', 'Tailwind CSS', 'PostgreSQL'],
     url: 'https://ptpn3.co.id/smart-book',
+    internal: true,
     screenshots: [
       { src: '/assets/project/BRM-QuickAccess/dashboard BRM.png', caption: 'Dashboard Smart Book' },
       { src: '/assets/project/BRM-QuickAccess/memo.png', caption: 'Memo dinas' },
@@ -57,24 +62,24 @@ export const tourismScreenshots = [
 
 export const experience = [
   {
-    period: 'Jul 2026 — Sekarang',
+    period: 'Jul 2026 \u2014 Sekarang',
     role: 'Backend Developer',
     company: 'Dinas Komunikasi dan Informatika Provinsi Sumatera Utara',
     logo: '/assets/logos/pemprov-sumut.png',
     description: 'Mengembangkan API Pariwisata pada aplikasi Superrapp Sumatera Utara, mencakup modul destinasi wisata, cagar budaya, kalender event, transportasi, kuliner, dan akomodasi. Mengimplementasikan pencarian lokasi terdekat dengan Redis Geospatial Index.',
   },
   {
-    period: 'Feb 2025 — Sekarang',
+    period: 'Feb 2025 \u2014 Sekarang',
     role: 'Full Stack Web Developer',
-    company: 'WOKA (Work Assistant) · Freelance',
+    company: 'WOKA (Work Assistant) \u00B7 Freelance, Part-time',
     logo: '/assets/logos/woka.png',
     logoVariant: 'wide',
     description: 'Berkolaborasi dari analisis kebutuhan dan perancangan sistem hingga implementasi, deployment, perbaikan, dan pemeliharaan aplikasi web untuk klien.',
   },
   {
-    period: 'Des 2025 — Jun 2026',
+    period: 'Des 2025 \u2014 Jun 2026',
     role: 'Programmer Software & IT Support',
-    company: 'PT Perkebunan Nusantara IV Regional I · MagangHub Batch 3',
+    company: 'PT Perkebunan Nusantara IV Regional I \u00B7 MagangHub Batch 3',
     logo: '/assets/logos/palmco.png',
     description: 'Mendukung pengembangan aplikasi internal, pengujian dan perbaikan fitur, serta troubleshooting perangkat, software, dan jaringan.',
   },
@@ -82,14 +87,13 @@ export const experience = [
 
 export const skillGroups = [
   { label: 'Backend & data', skills: ['Laravel', 'Go (Golang)', 'PHP', 'REST API', 'MySQL', 'PostgreSQL', 'Redis'] },
-  { label: 'Frontend web', skills: ['React', 'Astro', 'Vue.js', 'JavaScript', 'Tailwind CSS', 'HTML & CSS', 'Vite'] },
-  { label: 'Mobile', skills: ['Flutter', 'REST API', 'JSON', 'Responsive UI'] },
-  { label: 'Engineering practices', skills: ['Docker', 'UML', 'Testing & debugging', 'Deployment'] },
+  { label: 'Frontend web', skills: ['React', 'Astro', 'Vue.js', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'Vite'] },
+  { label: 'Mobile', skills: ['Flutter', 'Dart', 'State Management', 'Responsive UI'] },
+  { label: 'Engineering practices', skills: ['Docker', 'Git / GitHub', 'Testing & debugging', 'CI/CD', 'Deployment'] },
 ];
 
 export const certifications = [
   { title: 'Assistant Web Developer', issuer: 'BNSP', image: '/assets/sertif/BNSP Web Development.png', document: '/assets/sertif/BNSP Web Development.pdf' },
   { title: 'MagangHub Batch 3', issuer: 'PTPN IV Regional 1', image: '/assets/sertif/sertif maganghub.png', document: '/assets/sertif/sertif maganghub.pdf' },
-  { title: 'Database Course', issuer: 'Multimatics · ITS', image: '/assets/sertif/multimatics-database-AhmadSyahLubis.png', document: '/assets/sertif/multimatics-database-AhmadSyahLubis.pdf' },
-  { title: 'TOEFL Score 450', issuer: 'Briton English Education', image: '/assets/sertif/sertif toefl ahmad.png', document: '/assets/sertif/sertif-toefl-landscape.pdf', rotatePreview: true },
+  { title: 'Database Course', issuer: 'Multimatics \u00B7 ITS', image: '/assets/sertif/multimatics-database-AhmadSyahLubis.png', document: '/assets/sertif/multimatics-database-AhmadSyahLubis.pdf' },
 ];
