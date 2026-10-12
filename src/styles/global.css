@@ -18,7 +18,7 @@ h1,h2,h3{font-family:Manrope,sans-serif}
 .brand-mark{font-family:Manrope,sans-serif;font-size:22px;font-weight:800;letter-spacing:-.1em;color:var(--navy)}
 .brand-mark span{color:#20a993}
 .brand-name{font-family:Manrope,sans-serif;font-size:11px;font-weight:800;line-height:1.16;letter-spacing:.01em;text-transform:uppercase}
-.topbar-nav{display:flex;flex:1;align-items:center;justify-content:center;gap:clamp(22px,3.6vw,58px);margin-left:clamp(24px,4vw,64px)}
+.topbar-nav{display:flex;flex:1;align-items:center;justify-content:flex-end;gap:clamp(22px,3.6vw,58px);margin-left:clamp(24px,4vw,64px)}
 .topbar-nav a{position:relative;font-size:13px;color:#1b3849;font-weight:700;padding:10px 2px;white-space:nowrap;transition:color .2s}
 .topbar-nav a:after{content:'';position:absolute;left:2px;right:2px;bottom:5px;height:1px;background:#0a7770;transform:scaleX(0);transform-origin:left;transition:transform .2s}
 .topbar-nav a:hover,.topbar-nav a:focus-visible{color:#075e55}
