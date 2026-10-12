@@ -80,8 +80,8 @@ export const experience = [
 ];
 
 export const skillGroups = [
-  { label: 'Backend & data', skills: ['Laravel', 'PHP', 'REST API', 'MySQL', 'PostgreSQL', 'Redis', 'Golang'] },
-  { label: 'Frontend web', skills: ['Vue.js', 'JavaScript', 'Tailwind CSS', 'HTML & CSS', 'Vite'] },
+  { label: 'Backend & data', skills: ['Laravel', 'Go (Golang)', 'PHP', 'REST API', 'MySQL', 'PostgreSQL', 'Redis'] },
+  { label: 'Frontend web', skills: ['React', 'Astro', 'Vue.js', 'JavaScript', 'Tailwind CSS', 'HTML & CSS', 'Vite'] },
   { label: 'Mobile', skills: ['Flutter', 'REST API', 'JSON', 'Responsive UI'] },
   { label: 'Engineering practices', skills: ['Docker', 'UML', 'Testing & debugging', 'Deployment'] },
 ];
