@@ -138,7 +138,7 @@ h1 em,h2 em{font-style:normal;color:var(--teal)}
 .timeline-item{display:grid;grid-template-columns:160px 1fr;gap:30px;padding:29px 0;border-bottom:1px solid #dbe5e8}
 .timeline-period{color:#118b79;font-size:11px;font-weight:800;padding-top:6px}
 .timeline-role{display:flex;align-items:center;gap:15px;margin-bottom:14px}
-.timeline-logo{position:relative;width:88px;height:70px;flex:none;overflow:hidden;border:1px solid #dce7e8;background:#fff}
+.timeline-logo{position:relative;width:88px;height:70px;flex:none;overflow:hidden}
 .timeline-logo img{position:absolute;inset:5px;width:calc(100% - 10px);height:calc(100% - 10px);object-fit:contain}
 .timeline-logo--wide{width:126px}
 .timeline-item h3{font-size:18px;letter-spacing:-.02em;margin:0 0 5px}
