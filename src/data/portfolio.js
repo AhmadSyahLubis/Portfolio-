@@ -96,4 +96,6 @@ export const certifications = [
   { title: 'Assistant Web Developer', issuer: 'BNSP', image: '/assets/sertif/BNSP Web Development.png', document: '/assets/sertif/BNSP Web Development.pdf' },
   { title: 'MagangHub Batch 3', issuer: 'PTPN IV Regional 1', image: '/assets/sertif/sertif maganghub.png', document: '/assets/sertif/sertif maganghub.pdf' },
   { title: 'Database Course', issuer: 'Multimatics \u00B7 ITS', image: '/assets/sertif/multimatics-database-AhmadSyahLubis.png', document: '/assets/sertif/multimatics-database-AhmadSyahLubis.pdf' },
+  { title: 'English Proficiency (TOEFL)', issuer: 'Briton English Education', image: '/assets/sertif/sertif toefl ahmad.png', document: '/assets/sertif/sertif-toefl-landscape.pdf' },
 ];
+
