@@ -22,7 +22,7 @@ import { profile, projects, tourismScreenshots, experience, skillGroups, certifi
     <header class="site-header">
       <div class="container nav-shell">
         <a class="brand" href="#home" aria-label="Ahmad Syah Lubis, kembali ke atas"><span class="brand-mark">AS<span>.</span></span><span class="brand-name">Ahmad Syah<br />Lubis</span></a>
-        <nav class="topbar-nav" aria-label="Navigasi utama"><a href="#about">Tentang</a><a href="#projects">Proyek</a><a href="#experience">Pengalaman</a><a href="#certifications">Sertifikasi</a><a class="nav-contact" href="#contact">Kontak <span aria-hidden="true">↗</span></a></nav>
+        <nav class="topbar-nav" aria-label="Navigasi utama"><a href="#about">Tentang</a><a href="#projects">Proyek</a><a href="#experience">Pengalaman</a><a href="#certifications">Sertifikasi</a><a class="nav-contact" href="#contact">Kontak</a></nav>
       </div>
     </header>
 
@@ -50,7 +50,7 @@ import { profile, projects, tourismScreenshots, experience, skillGroups, certifi
       <section class="section about-section" id="about" aria-labelledby="about-title">
         <div class="container about-layout">
           <div class="section-intro"><span class="eyebrow"><span class="eyebrow-line"></span> 01 / TENTANG SAYA</span><h2 id="about-title">Teknologi yang bekerja untuk <em>kebutuhan nyata.</em></h2></div>
-          <div class="about-body"><p>Saya adalah lulusan Sistem Informasi Universitas Potensi Utama dengan IPK 3,90/4,00. Saat ini saya bekerja sebagai Backend Developer di Dinas Komunikasi dan Informatika Provinsi Sumatera Utara.</p><p>Keahlian saya mencakup perancangan API, pengembangan frontend web dengan Vue.js, serta aplikasi mobile dengan Flutter. Saya terbiasa bekerja bersama tim sejak tahap analisis hingga deployment.</p><div class="education-note"><span class="education-icon" aria-hidden="true">↗</span><div><strong>Sarjana Sistem Informasi</strong><small>Universitas Potensi Utama · 2021–2025 · IPK 3,90/4,00</small></div></div></div>
+          <div class="about-body"><p>Saya adalah lulusan Sistem Informasi Universitas Potensi Utama dengan IPK 3,90/4,00. Saat ini saya bekerja sebagai Backend Developer di Dinas Komunikasi dan Informatika Provinsi Sumatera Utara.</p><p>Keahlian saya mencakup perancangan API, pengembangan frontend web dengan Vue.js, serta aplikasi mobile dengan Flutter. Saya terbiasa bekerja bersama tim sejak tahap analisis hingga deployment.</p><div class="education-note"><span class="education-icon" aria-hidden="true"><img src="/assets/logos/potensi-utama.png" alt="" width="60" height="60" loading="lazy" /></span><div><strong>Sarjana Sistem Informasi</strong><small>Universitas Potensi Utama · 2021–2025 · IPK 3,90/4,00</small></div></div></div>
         </div>
       </section>
 
@@ -89,7 +89,7 @@ import { profile, projects, tourismScreenshots, experience, skillGroups, certifi
       </section>
 
       <section class="section experience-section" id="experience" aria-labelledby="experience-title">
-        <div class="container experience-layout"><div class="experience-intro"><span class="eyebrow"><span class="eyebrow-line"></span> 03 / PERJALANAN</span><h2 id="experience-title">Pengalaman <em>profesional.</em></h2><p>Pengalaman lintas backend, pengembangan web, dan dukungan sistem membentuk cara saya memecahkan masalah secara menyeluruh.</p></div><div class="timeline">{experience.map((job) => <article class="timeline-item"><span class="timeline-period">{job.period}</span><div><div class="timeline-role">{job.logo && <span class="timeline-logo"><img src={job.logo} alt="" loading="lazy" /></span>}<div><h3>{job.role}</h3><p class="timeline-company">{job.company}</p></div></div><p class="timeline-description">{job.description}</p></div></article>)}</div></div>
+        <div class="container experience-layout"><div class="experience-intro"><span class="eyebrow"><span class="eyebrow-line"></span> 03 / PERJALANAN</span><h2 id="experience-title">Pengalaman <em>profesional.</em></h2><p>Pengalaman lintas backend, pengembangan web, dan dukungan sistem membentuk cara saya memecahkan masalah secara menyeluruh.</p></div><div class="timeline">{experience.map((job) => <article class="timeline-item"><span class="timeline-period">{job.period}</span><div><div class="timeline-role">{job.logo && <span class:list={['timeline-logo', job.logoVariant === 'wide' && 'timeline-logo--wide']}><img src={job.logo} alt="" loading="lazy" /></span>}<div><h3>{job.role}</h3><p class="timeline-company">{job.company}</p></div></div><p class="timeline-description">{job.description}</p></div></article>)}</div></div>
       </section>
 
       <section class="section skills-section" id="skills" aria-labelledby="skills-title"><div class="container"><div class="section-heading"><div><span class="eyebrow"><span class="eyebrow-line"></span> 04 / TOOLKIT</span><h2 id="skills-title">Keahlian & <em>teknologi.</em></h2></div><p>Perangkat yang saya gunakan untuk membangun backend, frontend web, dan aplikasi mobile.</p></div><div class="skills-grid">{skillGroups.map((group, index) => <div class="skill-card"><span class="skill-number">0{index + 1}</span><h3>{group.label}</h3><ul>{group.skills.map((skill) => <li>{skill}</li>)}</ul></div>)}</div></div></section>

@@ -66,6 +66,8 @@ export const experience = [
     period: 'Feb 2025 — Sekarang',
     role: 'Full Stack Web Developer',
     company: 'WOKA (Work Assistant) · Freelance',
+    logo: '/assets/logos/woka.png',
+    logoVariant: 'wide',
     description: 'Berkolaborasi dari analisis kebutuhan dan perancangan sistem hingga implementasi, deployment, perbaikan, dan pemeliharaan aplikasi web untuk klien.',
   },
   {
