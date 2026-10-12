@@ -1,0 +1,128 @@
+---
+import '../styles/global.css';
+import ProjectCard from '../components/ProjectCard.astro';
+import { profile, projects, experience, skillGroups, certifications, displayImage } from '../data/portfolio.js';
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0e1b2a" />
+    <meta name="description" content="Portfolio Ahmad Syah Lubis, software engineer di Medan dengan keahlian backend, frontend web, dan pengembangan mobile." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>Ahmad Syah Lubis — Software Engineer</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Lewati ke konten</a>
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="#home" aria-label="Ahmad Syah Lubis, kembali ke atas"><span class="brand-mark">AS<span>.</span></span><span class="brand-name">Ahmad Syah<br />Lubis</span></a>
+        <nav class="topbar-nav" aria-label="Navigasi utama"><a href="#about">Tentang</a><a href="#projects">Proyek</a><a href="#experience">Pengalaman</a><a href="#certifications">Sertifikasi</a><a class="nav-contact" href="#contact">Kontak <span aria-hidden="true">↗</span></a></nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="container hero-layout">
+          <div class="hero-content">
+            <div class="status-line"><span class="status-dot"></span>{profile.role} <span class="status-separator">/</span> {profile.location}</div>
+            <p class="hero-kicker">BACKEND · FRONTEND · MOBILE</p>
+            <h1 id="hero-title"><span>Ahmad Syah </span><em>Lubis.</em></h1>
+            <p class="hero-description">Saya mengembangkan produk digital dari API dan sistem backend, antarmuka web, hingga aplikasi mobile dengan perhatian pada kebutuhan pengguna.</p>
+            <div class="hero-actions"><a class="button button-primary" href="#projects">Jelajahi proyek <span aria-hidden="true">↗</span></a><a class="button button-secondary" href={`mailto:${profile.email}`}>Hubungi saya <span aria-hidden="true">→</span></a></div>
+            <div class="hero-proof"><span>01 <small>Backend & API</small></span><span>02 <small>Frontend web</small></span><span>03 <small>Mobile · Flutter</small></span></div>
+          </div>
+          <div class="hero-portrait-wrap">
+            <div class="portrait-top"><span><span class="mini-square"></span> ENGINEER PROFILE</span><span>MEDAN, ID</span></div>
+            <div class="portrait-stage"><div class="portrait-circle"></div><img src="/assets/optimized/foto ahmad/ahmad_nobg.webp" alt="Potret Ahmad Syah Lubis" width="1000" height="1334" fetchpriority="high" /></div>
+            <div class="portrait-bottom"><span>AHMAD SYAH LUBIS</span><span>SOFTWARE ENGINEER ↗</span></div>
+            <div class="floating-code" aria-hidden="true"><span class="code-dots">● ● ●</span><code>const focus = &#123;<br />&nbsp; build: 'reliable',<br />&nbsp; impact: 'real'<br />&#125;;</code></div>
+          </div>
+        </div>
+        <div class="container hero-bottom"><span>SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span><span>PORTFOLIO / 2026</span></div>
+      </section>
+
+      <section class="section about-section" id="about" aria-labelledby="about-title">
+        <div class="container about-layout">
+          <div class="section-intro"><span class="eyebrow"><span class="eyebrow-line"></span> 01 / TENTANG SAYA</span><h2 id="about-title">Teknologi yang bekerja untuk <em>kebutuhan nyata.</em></h2></div>
+          <div class="about-body"><p>Saya adalah lulusan Sistem Informasi Universitas Potensi Utama dengan IPK 3,90/4,00. Saat ini saya bekerja sebagai Backend Developer di Dinas Komunikasi dan Informatika Provinsi Sumatera Utara.</p><p>Keahlian saya mencakup perancangan API, pengembangan frontend web dengan Vue.js, serta aplikasi mobile dengan Flutter. Saya terbiasa bekerja bersama tim sejak tahap analisis hingga deployment.</p><div class="education-note"><span class="education-icon" aria-hidden="true">↗</span><div><strong>Sarjana Sistem Informasi</strong><small>Universitas Potensi Utama · 2021–2025 · IPK 3,90/4,00</small></div></div></div>
+        </div>
+      </section>
+
+      <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+        <div class="container">
+          <div class="section-heading"><div><span class="eyebrow"><span class="eyebrow-line"></span> 02 / PORTFOLIO</span><h2 id="projects-title">Pekerjaan <em>pilihan.</em></h2></div><p>Proyek yang saya kerjakan bersama tim di lingkungan perusahaan dan layanan publik.</p></div>
+          <section class="project-group" aria-labelledby="palmco-title">
+            <div class="project-org">
+              <div class="project-org-logo project-org-logo--palmco"><img src="/assets/logos/palmco.png" alt="" width="640" height="640" loading="lazy" /></div>
+              <div class="project-org-identity"><span>PERUSAHAAN / PALMCO</span><h3 id="palmco-title">PT Perkebunan Nusantara IV <small>Regional I</small></h3></div>
+              <p>Dua aplikasi internal untuk mendukung alur kerja dan akses informasi perusahaan.</p>
+            </div>
+            <div class="projects-list">{projects.map((project) => <ProjectCard project={project} />)}</div>
+          </section>
+          <section class="project-group" aria-labelledby="diskominfo-title">
+            <div class="project-org">
+              <div class="project-org-logo project-org-logo--diskominfo"><img src="/assets/logos/diskominfo-sumut.png" alt="" width="3508" height="2481" loading="lazy" /></div>
+              <div class="project-org-identity"><span>PEMERINTAH PROVINSI SUMATERA UTARA</span><h3 id="diskominfo-title">Dinas Komunikasi dan Informatika <small>Provinsi Sumatera Utara</small></h3></div>
+              <p>Pengembangan layanan backend untuk aplikasi publik.</p>
+            </div>
+            <article class="project-brief">
+              <div class="project-brief-main"><span class="project-brief-label">BACKEND DEVELOPMENT / REST API</span><h4>Superrapp Sumatera Utara</h4><p>Saya mengembangkan API yang mendukung informasi pariwisata dan layanan terkait di Sumatera Utara.</p></div>
+              <div class="project-brief-detail"><span>LINGKUP PEKERJAAN</span><p>Pariwisata, cagar budaya, kalender event, transportasi, kuliner, dan akomodasi.</p><p>Pencarian lokasi terdekat menggunakan Redis Geospatial Index.</p></div>
+            </article>
+          </section>
+        </div>
+      </section>
+
+      <section class="section experience-section" id="experience" aria-labelledby="experience-title">
+        <div class="container experience-layout"><div class="experience-intro"><span class="eyebrow"><span class="eyebrow-line"></span> 03 / PERJALANAN</span><h2 id="experience-title">Pengalaman <em>profesional.</em></h2><p>Pengalaman lintas backend, pengembangan web, dan dukungan sistem membentuk cara saya memecahkan masalah secara menyeluruh.</p></div><div class="timeline">{experience.map((job) => <article class="timeline-item"><span class="timeline-period">{job.period}</span><div><div class="timeline-role">{job.logo && <span class="timeline-logo"><img src={job.logo} alt="" loading="lazy" /></span>}<div><h3>{job.role}</h3><p class="timeline-company">{job.company}</p></div></div><p class="timeline-description">{job.description}</p></div></article>)}</div></div>
+      </section>
+
+      <section class="section skills-section" id="skills" aria-labelledby="skills-title"><div class="container"><div class="section-heading"><div><span class="eyebrow"><span class="eyebrow-line"></span> 04 / TOOLKIT</span><h2 id="skills-title">Keahlian & <em>teknologi.</em></h2></div><p>Perangkat yang saya gunakan untuk membangun backend, frontend web, dan aplikasi mobile.</p></div><div class="skills-grid">{skillGroups.map((group, index) => <div class="skill-card"><span class="skill-number">0{index + 1}</span><h3>{group.label}</h3><ul>{group.skills.map((skill) => <li>{skill}</li>)}</ul></div>)}</div></div></section>
+
+      <section class="section certifications-section" id="certifications" aria-labelledby="certifications-title">
+        <div class="container">
+          <div class="section-heading"><div><span class="eyebrow"><span class="eyebrow-line"></span> 05 / KREDENSIAL</span><h2 id="certifications-title">Sertifikasi & <em>pembelajaran.</em></h2></div><p>Dokumentasi pembelajaran dan pengakuan kompetensi yang mendukung pekerjaan saya.</p></div>
+          <div class="cert-grid">
+            {certifications.map((cert) => <a class="cert-card" href={cert.document} target="_blank" rel="noopener noreferrer" aria-label={`Buka sertifikat ${cert.title} dari ${cert.issuer} di tab baru`}>
+              <div class:list={['cert-image', cert.rotatePreview && 'cert-image--rotated']}><img src={displayImage(cert.image)} alt="" loading="lazy" decoding="async" /></div>
+              <div class="cert-content"><span class="cert-issuer">{cert.issuer}</span><h3>{cert.title}</h3><span class="cert-open">Lihat sertifikat <span class="cert-arrow" aria-hidden="true">↗</span></span></div>
+            </a>)}
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="container contact-layout"><div><span class="eyebrow"><span class="eyebrow-line"></span> 06 / KONTAK</span><h2 id="contact-title">Mari membangun sesuatu yang <em>bermanfaat.</em></h2><p>Terbuka untuk kolaborasi pengembangan web, API, aplikasi mobile, dan produk digital.</p><a class="button button-light" href={`mailto:${profile.email}`}>Kirim email <span aria-hidden="true">↗</span></a></div><div class="contact-links"><span>TERHUBUNG</span><a href={`mailto:${profile.email}`}>Email <span aria-hidden="true">↗</span></a><a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></div></div></section>
+    </main>
+    <footer class="site-footer"><div class="container footer-layout"><span>© {new Date().getFullYear()} Ahmad Syah Lubis</span><span>Built with Astro · Medan, Indonesia</span><a href="#home">Kembali ke atas ↑</a></div></footer>
+    <script>
+      document.querySelectorAll('[data-gallery]').forEach((gallery) => {
+        const data = gallery.querySelector('.gallery-data');
+        if (!data?.textContent) return;
+        const shots = JSON.parse(data.textContent);
+        const image = gallery.querySelector('.gallery-image');
+        const caption = gallery.querySelector('.gallery-caption');
+        const count = gallery.querySelector('.gallery-count');
+        const prev = gallery.querySelector('.gallery-prev');
+        const next = gallery.querySelector('.gallery-next');
+        let index = 0;
+        const show = (newIndex: number) => {
+          index = newIndex;
+          if (image instanceof HTMLImageElement) { image.src = shots[index].src; image.alt = `${gallery.closest('.project-card')?.querySelector('h4')?.textContent}: ${shots[index].caption}`; }
+          if (caption) caption.textContent = shots[index].caption;
+          if (count) count.textContent = `${String(index + 1).padStart(2, '0')} / ${String(shots.length).padStart(2, '0')}`;
+          if (prev instanceof HTMLButtonElement) prev.disabled = index === 0;
+          if (next instanceof HTMLButtonElement) next.disabled = index === shots.length - 1;
+        };
+        prev?.addEventListener('click', () => show(index - 1));
+        next?.addEventListener('click', () => show(index + 1));
+      });
+    </script>
+  </body>
+</html>
