@@ -83,7 +83,7 @@ export const skillGroups = [
   { label: 'Backend & data', skills: ['Laravel', 'PHP', 'REST API', 'MySQL', 'PostgreSQL', 'Redis', 'Golang'] },
   { label: 'Frontend web', skills: ['Vue.js', 'JavaScript', 'Tailwind CSS', 'HTML & CSS', 'Vite'] },
   { label: 'Mobile', skills: ['Flutter', 'REST API', 'JSON', 'Responsive UI'] },
-  { label: 'Workflow', skills: ['Docker', 'UML', 'Testing & debugging', 'Deployment'] },
+  { label: 'Engineering practices', skills: ['Docker', 'UML', 'Testing & debugging', 'Deployment'] },
 ];
 
 export const certifications = [
