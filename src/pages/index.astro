@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import ProjectCard from '../components/ProjectCard.astro';
-import { profile, projects, experience, skillGroups, certifications, displayImage } from '../data/portfolio.js';
+import { profile, projects, tourismScreenshots, experience, skillGroups, certifications, displayImage } from '../data/portfolio.js';
 ---
 
 <!doctype html>
@@ -75,6 +75,15 @@ import { profile, projects, experience, skillGroups, certifications, displayImag
             <article class="project-brief">
               <div class="project-brief-main"><span class="project-brief-label">BACKEND DEVELOPMENT / REST API</span><h4>Superrapp Sumatera Utara</h4><p>Saya mengembangkan API yang mendukung informasi pariwisata dan layanan terkait di Sumatera Utara.</p></div>
               <div class="project-brief-detail"><span>LINGKUP PEKERJAAN</span><p>Pariwisata, cagar budaya, kalender event, transportasi, kuliner, dan akomodasi.</p><p>Pencarian lokasi terdekat menggunakan Redis Geospatial Index.</p></div>
+              <div class="tourism-gallery">
+                <div class="tourism-gallery-heading"><div><span class="project-brief-label">GALERI PROYEK</span><h5>Cuplikan fitur pariwisata</h5></div><p>Klik gambar untuk melihat tangkapan layar lengkap.</p></div>
+                <div class="tourism-gallery-grid">
+                  {tourismScreenshots.map((shot, index) => <a class:list={['tourism-shot', index === 0 && 'tourism-shot--featured']} href={shot.src} target="_blank" rel="noopener noreferrer" aria-label={`Buka tangkapan layar ${shot.caption} ukuran penuh di tab baru`}>
+                    <div class="tourism-shot-frame"><img src={displayImage(shot.src)} alt="" loading="lazy" decoding="async" /></div>
+                    <span class="tourism-shot-caption"><span>{String(index + 1).padStart(2, '0')} / {shot.caption}</span><span aria-hidden="true">↗</span></span>
+                  </a>)}
+                </div>
+              </div>
             </article>
           </section>
         </div>
