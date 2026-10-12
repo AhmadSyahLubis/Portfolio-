@@ -33,7 +33,7 @@ import { profile, projects, tourismScreenshots, experience, skillGroups, certifi
             <div class="hero-byline"><span>{profile.role}</span><span>{profile.location}</span></div>
             <h1 id="hero-title"><span>Ahmad Syah </span><em>Lubis.</em></h1>
             <p class="hero-description">Sebagai Software Engineer, saya merancang arsitektur sistem, baik monolitik maupun microservices, serta mengembangkan API yang terintegrasi dengan aplikasi web dan mobile untuk mendukung kebutuhan bisnis dan organisasi.</p>
-            <div class="hero-actions"><a class="button button-primary" href="#projects">Jelajahi proyek <span aria-hidden="true">↗</span></a><a class="button button-secondary" href={`mailto:${profile.email}`}>Hubungi saya <span aria-hidden="true">→</span></a></div>
+            <div class="hero-actions"><a class="button button-primary" href="#projects">Jelajahi proyek</a><a class="button button-secondary" href={`mailto:${profile.email}`}>Hubungi saya</a></div>
             <div class="hero-proof"><span>01 <small>Backend & API</small></span><span>02 <small>Frontend web</small></span><span>03 <small>Mobile · Flutter</small></span></div>
           </div>
           <div class="hero-portrait-wrap">
@@ -68,14 +68,14 @@ import { profile, projects, tourismScreenshots, experience, skillGroups, certifi
               <p>Pengembangan layanan backend untuk aplikasi publik.</p>
             </div>
             <article class="project-brief">
-              <div class="project-brief-main"><span class="project-brief-label">BACKEND DEVELOPMENT / REST API</span><h4>Superrapp Sumatera Utara</h4><p>Saya mengembangkan API Pariwisata untuk mendukung fitur wisata pada aplikasi Superrapp Sumatera Utara.</p><a class="text-link project-brief-link" href="https://sumutcerdas.web.id/" target="_blank" rel="noopener noreferrer" aria-label="Buka situs SUMUT Cerdas di tab baru">Lihat situs SUMUT Cerdas <span aria-hidden="true">↗</span></a></div>
+              <div class="project-brief-main"><span class="project-brief-label">BACKEND DEVELOPMENT / REST API</span><h4>Superrapp Sumatera Utara</h4><p>Saya mengembangkan API Pariwisata untuk mendukung fitur wisata pada aplikasi Superrapp Sumatera Utara.</p><a class="text-link project-brief-link" href="https://sumutcerdas.web.id/" target="_blank" rel="noopener noreferrer" aria-label="Buka situs SUMUT Cerdas di tab baru">Lihat situs SUMUT Cerdas</a></div>
               <div class="project-brief-detail"><span>LINGKUP PEKERJAAN</span><p>Modul destinasi wisata, cagar budaya, kalender event, transportasi, kuliner, dan akomodasi.</p><p>Pencarian lokasi terdekat menggunakan Redis Geospatial Index.</p></div>
               <div class="tourism-gallery">
                 <div class="tourism-gallery-heading"><div><span class="project-brief-label">GALERI PROYEK</span><h5>Cuplikan fitur pariwisata</h5></div><p>Klik gambar untuk melihat tangkapan layar lengkap.</p></div>
                 <div class="tourism-gallery-grid">
                   {tourismScreenshots.map((shot, index) => <a class:list={['tourism-shot', index === 0 && 'tourism-shot--featured']} href={shot.src} target="_blank" rel="noopener noreferrer" aria-label={`Buka tangkapan layar ${shot.caption} ukuran penuh di tab baru`}>
                     <div class="tourism-shot-frame"><img src={displayImage(shot.src)} alt="" loading="lazy" decoding="async" /></div>
-                    <span class="tourism-shot-caption"><span>{String(index + 1).padStart(2, '0')} / {shot.caption}</span><span aria-hidden="true">↗</span></span>
+                    <span class="tourism-shot-caption"><span>{String(index + 1).padStart(2, '0')} / {shot.caption}</span></span>
                   </a>)}
                 </div>
               </div>
@@ -96,20 +96,20 @@ import { profile, projects, tourismScreenshots, experience, skillGroups, certifi
           <div class="cert-grid">
             {certifications.map((cert) => <a class="cert-card" href={cert.document} target="_blank" rel="noopener noreferrer" aria-label={`Buka sertifikat ${cert.title} dari ${cert.issuer} di tab baru`}>
               <div class:list={['cert-image', cert.rotatePreview && 'cert-image--rotated']}><img src={displayImage(cert.image)} alt="" loading="lazy" decoding="async" /></div>
-              <div class="cert-content"><span class="cert-issuer">{cert.issuer}</span><h3>{cert.title}</h3><span class="cert-open">Lihat sertifikat <span class="cert-arrow" aria-hidden="true">↗</span></span></div>
+              <div class="cert-content"><span class="cert-issuer">{cert.issuer}</span><h3>{cert.title}</h3><span class="cert-open">Lihat sertifikat</span></div>
             </a>)}
           </div>
         </div>
       </section>
 
-      <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="container contact-layout"><div><span class="eyebrow"><span class="eyebrow-line"></span> 06 / KONTAK</span><h2 id="contact-title">Mari membangun sesuatu yang <em>bermanfaat.</em></h2><p>Terbuka untuk kolaborasi pengembangan web, API, aplikasi mobile, dan produk digital.</p><a class="button button-light" href={`mailto:${profile.email}`}>Kirim email <span aria-hidden="true">↗</span></a></div><div class="contact-links"><span>TERHUBUNG</span>
-        <a href={`mailto:${profile.email}`}><span class="contact-link-copy"><strong>Email</strong><small>{profile.email}</small></span><span aria-hidden="true">↗</span></a>
-        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"><span class="contact-link-copy"><strong>LinkedIn</strong><small>ahmadsyahlubis</small></span><span aria-hidden="true">↗</span></a>
-        <a href={profile.github} target="_blank" rel="noopener noreferrer"><span class="contact-link-copy"><strong>GitHub</strong><small>ahmadsyahlubis</small></span><span aria-hidden="true">↗</span></a>
-        <a href={profile.instagram} target="_blank" rel="noopener noreferrer"><span class="contact-link-copy"><strong>Instagram</strong><small>ahmadsyah_62</small></span><span aria-hidden="true">↗</span></a>
+      <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="container contact-layout"><div><span class="eyebrow"><span class="eyebrow-line"></span> 06 / KONTAK</span><h2 id="contact-title">Mari membangun sesuatu yang <em>bermanfaat.</em></h2><p>Terbuka untuk kolaborasi pengembangan web, API, aplikasi mobile, dan produk digital.</p><a class="button button-light" href={`mailto:${profile.email}`}>Kirim email</a></div><div class="contact-links"><span>TERHUBUNG</span>
+        <a href={`mailto:${profile.email}`}><span class="contact-link-copy"><strong>Email</strong><small>{profile.email}</small></span></a>
+        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"><span class="contact-link-copy"><strong>LinkedIn</strong><small>ahmadsyahlubis</small></span></a>
+        <a href={profile.github} target="_blank" rel="noopener noreferrer"><span class="contact-link-copy"><strong>GitHub</strong><small>ahmadsyahlubis</small></span></a>
+        <a href={profile.instagram} target="_blank" rel="noopener noreferrer"><span class="contact-link-copy"><strong>Instagram</strong><small>ahmadsyah_62</small></span></a>
       </div></div></section>
     </main>
-    <footer class="site-footer"><div class="container footer-layout"><span>© {new Date().getFullYear()} Ahmad Syah Lubis</span><span>Built with Astro · Medan, Indonesia</span><a href="#home">Kembali ke atas ↑</a></div></footer>
+    <footer class="site-footer"><div class="container footer-layout"><span>© {new Date().getFullYear()} Ahmad Syah Lubis</span><span>Built with Astro · Medan, Indonesia</span><a href="#home">Kembali ke atas</a></div></footer>
     <script>
       document.querySelectorAll('[data-gallery]').forEach((gallery) => {
         const data = gallery.querySelector('.gallery-data');
