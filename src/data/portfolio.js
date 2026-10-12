@@ -60,7 +60,7 @@ export const experience = [
     role: 'Backend Developer',
     company: 'Dinas Komunikasi dan Informatika Provinsi Sumatera Utara',
     logo: '/assets/logos/pemprov-sumut.png',
-    description: 'Mengembangkan API aplikasi Superrapp untuk pariwisata, cagar budaya, kalender event, transportasi, kuliner, dan akomodasi. Mengimplementasikan pencarian lokasi terdekat dengan Redis Geospatial Index.',
+    description: 'Mengembangkan API Pariwisata pada aplikasi Superrapp Sumatera Utara, mencakup modul destinasi wisata, cagar budaya, kalender event, transportasi, kuliner, dan akomodasi. Mengimplementasikan pencarian lokasi terdekat dengan Redis Geospatial Index.',
   },
   {
     period: 'Feb 2025 — Sekarang',
