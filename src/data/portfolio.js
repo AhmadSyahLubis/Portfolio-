@@ -5,6 +5,7 @@ export const profile = {
   email: 'ahmadsyahlubis62@gmail.com',
   linkedin: 'https://linkedin.com/in/ahmadsyahlubis',
   github: 'https://github.com/ahmadsyahlubis',
+  instagram: 'https://www.instagram.com/ahmadsyah_62/',
 };
 
 export const displayImage = (path) => path.replace('/assets/', '/assets/optimized/').replace(/\.png$/, '.webp');
