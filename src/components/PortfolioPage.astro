@@ -1,0 +1,193 @@
+---
+import '../styles/global.css';
+import ProjectCard from './ProjectCard.astro';
+import { profile, projects, tourismScreenshots, experience, skillGroups, certifications, displayImage, displayLogo } from '../data/portfolio.js';
+import { copy } from '../data/i18n.js';
+
+const { lang } = Astro.props as { lang: 'id' | 'en' };
+const t = copy[lang];
+const localizedProjects = lang === 'en' ? projects.map((project, index) => ({
+  ...project,
+  ...copy.en.projectContent[index],
+  screenshots: project.screenshots.map((shot, shotIndex) => ({ ...shot, caption: copy.en.projectContent[index].screenshots[shotIndex] })),
+})) : projects.map((project, index) => ({ ...project, category: copy.id.projects.projectCategories[index] }));
+const localizedTourismScreenshots = lang === 'en'
+  ? tourismScreenshots.map((shot, index) => ({ ...shot, caption: copy.en.tourismCaptions[index] }))
+  : tourismScreenshots;
+const localizedExperience = lang === 'en'
+  ? experience.map((job, index) => ({ ...job, ...copy.en.experienceContent[index] }))
+  : experience;
+const localizedSkillGroups = lang === 'en'
+  ? skillGroups.map((group, index) => ({
+    ...group,
+    label: copy.en.skillGroups[index],
+    skills: group.skills.map((skill) => copy.en.skillTerms[skill as keyof typeof copy.en.skillTerms] ?? skill),
+  }))
+  : skillGroups;
+const canonicalUrl = new URL(lang === 'en' ? '/en/' : '/', Astro.site ?? Astro.url).href;
+const alternateId = new URL('/', Astro.site ?? Astro.url).href;
+const alternateEn = new URL('/en/', Astro.site ?? Astro.url).href;
+const socialImage = new URL('/assets/optimized/portrait/ahmad-formal-transparent.webp', Astro.site ?? Astro.url).href;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0e1b2a" />
+    <meta name="description" content={t.meta.description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="id" href={alternateId} />
+    <link rel="alternate" hreflang="en" href={alternateEn} />
+    <link rel="alternate" hreflang="x-default" href={alternateId} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content="Ahmad Syah Lubis — Software Engineer" />
+    <meta property="og:description" content={t.meta.socialDescription} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:locale" content={t.meta.locale} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ahmad Syah Lubis — Software Engineer" />
+    <meta name="twitter:description" content={t.meta.socialDescription} />
+    <meta name="twitter:image" content={socialImage} />
+
+    <title>Ahmad Syah Lubis — Software Engineer</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t.skip}</a>
+    <header class="site-header">
+      <div class="container nav-shell">
+        <a class="brand" href="#home" aria-label={t.brandAria}><span class="brand-mark">AS<span>.</span></span><span class="brand-name">Ahmad Syah<br />Lubis</span></a>
+        <nav class="topbar-nav" aria-label={t.navAria}><a href="#about">{t.nav[0]}</a><a href="#projects">{t.nav[1]}</a><a href="#experience">{t.nav[2]}</a><a href="#certifications">{t.nav[3]}</a><a href="#contact">{t.nav[4]}</a></nav>
+        <nav class="language-switch" aria-label={t.languageAria}><a href="/" data-lang-switch aria-label="Bahasa Indonesia" aria-current={lang === 'id' ? 'page' : undefined}>ID</a><span aria-hidden="true">/</span><a href="/en/" data-lang-switch aria-label="English" aria-current={lang === 'en' ? 'page' : undefined}>EN</a></nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="container hero-layout">
+          <div class="hero-content">
+            <div class="hero-byline"><span>{profile.role}</span><span>{profile.location}</span></div>
+            <h1 id="hero-title"><span>Ahmad Syah </span><em>Lubis.</em></h1>
+            <p class="hero-description">{t.hero.description}</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects">{t.hero.projects}</a>
+              <a class="button button-secondary" href={`mailto:${profile.email}`}>{t.hero.contact}</a>
+              <a class="hero-cv-link" href={profile.cv} download="Ahmad_Syah_Lubis_CV.pdf">{t.hero.cv}</a>
+            </div>
+            <div class="hero-proof"><span>01 <small>Backend & API</small></span><span>02 <small>{t.hero.frontend}</small></span><span>03 <small>Mobile · Flutter</small></span></div>
+          </div>
+          <div class="hero-portrait-wrap">
+            <div class="portrait-stage">
+              <picture>
+                <source srcset="/assets/optimized/portrait/ahmad-formal-transparent.webp" type="image/webp" />
+                <img src="/assets/portrait/ahmad-formal-transparent.png" alt={t.hero.portraitAlt} width="1084" height="1451" fetchpriority="high" />
+              </picture>
+            </div>
+          </div>
+        </div>
+        <div class="container hero-bottom"><span>{t.hero.scroll} <span aria-hidden="true">↓</span></span><span>PORTFOLIO / 2026</span></div>
+      </section>
+
+      <section class="section about-section" id="about" aria-labelledby="about-title">
+        <div class="container about-layout">
+          <div class="section-intro"><span class="eyebrow"><span class="eyebrow-line"></span> 01 / {t.about.eyebrow}</span><h2 id="about-title">{t.about.title} <em>{t.about.accent}</em></h2></div>
+          <div class="about-body">{t.about.paragraphs.map((paragraph) => <p>{paragraph}</p>)}<div class="education-note"><span class="education-icon" aria-hidden="true"><img src={displayLogo('/assets/logos/potensi-utama.png')} alt="" width="60" height="60" loading="lazy" /></span><div><strong>{t.about.degree}</strong><small>{t.about.education}</small></div></div></div>
+        </div>
+      </section>
+
+      <section class="section projects-section" id="projects" aria-labelledby="projects-title">
+        <div class="container">
+          <div class="section-heading"><div><span class="eyebrow"><span class="eyebrow-line"></span> 02 / {t.projects.eyebrow}</span><h2 id="projects-title">{t.projects.title} <em>{t.projects.accent}</em></h2></div><p>{t.projects.intro}</p></div>
+          <section class="project-group" aria-labelledby="palmco-title">
+            <div class="project-org">
+              <div class="project-org-logo project-org-logo--palmco"><img src={displayLogo('/assets/logos/palmco.png')} alt="" width="640" height="640" loading="lazy" /></div>
+              <div class="project-org-identity"><span>{t.projects.palmcoOverline}</span><h3 id="palmco-title">PT Perkebunan Nusantara IV <small>Regional I</small></h3></div>
+              <p>{t.projects.palmcoSummary}</p>
+            </div>
+            <div class="projects-list">{localizedProjects.map((project) => <ProjectCard project={project} labels={t.projectCard} />)}</div>
+          </section>
+          <section class="project-group" aria-labelledby="diskominfo-title">
+            <div class="project-org">
+              <div class="project-org-logo project-org-logo--diskominfo"><img src={displayLogo('/assets/logos/pemprov-sumut.png')} alt="" width="500" height="625" loading="lazy" /></div>
+              <div class="project-org-identity"><span>{t.projects.governmentOverline}</span><h3 id="diskominfo-title">Dinas Komunikasi dan Informatika <small>Provinsi Sumatera Utara</small></h3></div>
+              <p>{t.projects.governmentSummary}</p>
+            </div>
+            <article class="project-brief">
+              <div class="project-brief-main"><span class="project-brief-label">{t.projects.tourismLabel}</span><h4>{t.projects.tourismTitle}</h4><p>{t.projects.tourismIntro}</p><a class="text-link project-brief-link" href="https://sumutcerdas.web.id/" target="_blank" rel="noopener noreferrer" aria-label={t.projects.tourismSiteAria}>{t.projects.tourismSite}</a></div>
+              <div class="project-brief-detail"><span>{t.projects.tourismScope}</span>{t.projects.tourismDetails.map((detail) => <p>{detail}</p>)}</div>
+              <div class="tourism-gallery">
+                <div class="tourism-gallery-heading"><div><span class="project-brief-label">{t.projects.galleryLabel}</span><h5>{t.projects.galleryTitle}</h5></div><p>{t.projects.galleryHint}</p></div>
+                <div class="tourism-gallery-grid">
+                  {localizedTourismScreenshots.map((shot, index) => <a class:list={['tourism-shot', index === 0 && 'tourism-shot--featured']} href={shot.src} target="_blank" rel="noopener noreferrer" aria-label={`${t.projects.galleryOpenStart} ${shot.caption} ${t.projects.galleryOpenEnd}`}>
+                    <div class="tourism-shot-frame"><img src={displayImage(shot.src)} alt="" loading="lazy" decoding="async" /></div>
+                    <span class="tourism-shot-caption"><span>{String(index + 1).padStart(2, '0')} / {shot.caption}</span></span>
+                  </a>)}
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+      </section>
+
+      <section class="section experience-section" id="experience" aria-labelledby="experience-title">
+        <div class="container experience-layout"><div class="experience-intro"><span class="eyebrow"><span class="eyebrow-line"></span> 03 / {t.experience.eyebrow}</span><h2 id="experience-title">{t.experience.title} <em>{t.experience.accent}</em></h2><p>{t.experience.intro}</p></div><div class="timeline">{localizedExperience.map((job) => <article class="timeline-item"><span class="timeline-period">{job.period}</span><div><div class="timeline-role">{job.logo && <span class:list={['timeline-logo', job.logoVariant === 'wide' && 'timeline-logo--wide']}><img src={displayLogo(job.logo)} alt="" width="88" height="70" loading="eager" /></span>}<div><h3>{job.role}</h3><p class="timeline-company">{job.company}</p></div></div><p class="timeline-description">{job.description}</p></div></article>)}</div></div>
+      </section>
+
+      <section class="section skills-section" id="skills" aria-labelledby="skills-title"><div class="container"><div class="section-heading"><div><span class="eyebrow"><span class="eyebrow-line"></span> 04 / {t.skills.eyebrow}</span><h2 id="skills-title">{t.skills.title} <em>{t.skills.accent}</em></h2></div><p>{t.skills.intro}</p></div><div class="skills-grid">{localizedSkillGroups.map((group, index) => <div class="skill-card"><span class="skill-number">0{index + 1}</span><h3>{group.label}</h3><ul>{group.skills.map((skill) => <li>{skill}</li>)}</ul></div>)}</div></div></section>
+
+      <section class="section certifications-section" id="certifications" aria-labelledby="certifications-title">
+        <div class="container">
+          <div class="section-heading"><div><span class="eyebrow"><span class="eyebrow-line"></span> 05 / {t.certifications.eyebrow}</span><h2 id="certifications-title">{t.certifications.title} <em>{t.certifications.accent}</em></h2></div><p>{t.certifications.intro}</p></div>
+          <div class="cert-grid">
+            {certifications.map((cert) => <a class="cert-card" href={cert.document} target="_blank" rel="noopener noreferrer" aria-label={`${t.certifications.ariaStart} ${cert.title} ${t.certifications.ariaFrom} ${cert.issuer} ${t.certifications.ariaEnd}`}>
+              <div class="cert-image"><img src={displayImage(cert.image)} alt="" loading="lazy" decoding="async" /></div>
+              <div class="cert-content"><span class="cert-issuer">{cert.issuer}</span><h3>{cert.title}</h3><span class="cert-open">{t.certifications.open}</span></div>
+            </a>)}
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="container contact-layout"><div><span class="eyebrow"><span class="eyebrow-line"></span> 06 / {t.contact.eyebrow}</span><h2 id="contact-title">{t.contact.title} <em>{t.contact.accent}</em></h2><p>{t.contact.intro}</p><a class="button button-light" href={`mailto:${profile.email}`}>{t.contact.email}</a></div><div class="contact-links"><span>{t.contact.connected}</span>
+        <a href={`mailto:${profile.email}`}><span class="contact-link-copy"><strong>Email</strong><small>{profile.email}</small></span></a>
+        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer"><span class="contact-link-copy"><strong>LinkedIn</strong><small>ahmadsyahlubis</small></span></a>
+        <a href={profile.github} target="_blank" rel="noopener noreferrer"><span class="contact-link-copy"><strong>GitHub</strong><small>ahmadsyahlubis</small></span></a>
+        <a href={profile.instagram} target="_blank" rel="noopener noreferrer"><span class="contact-link-copy"><strong>Instagram</strong><small>ahmadsyah_62</small></span></a>
+      </div></div></section>
+    </main>
+    <footer class="site-footer"><div class="container footer-layout"><span>&copy; {new Date().getFullYear()} Ahmad Syah Lubis</span><a href="#home">{t.backToTop}</a></div></footer>
+    <script>
+      document.querySelectorAll<HTMLAnchorElement>('[data-lang-switch]').forEach((link) => {
+        link.addEventListener('click', () => { link.href = `${link.pathname}${window.location.hash === '#home' ? '' : window.location.hash}`; });
+      });
+      document.querySelectorAll('[data-gallery]').forEach((gallery) => {
+        const data = gallery.querySelector('.gallery-data');
+        if (!data?.textContent) return;
+        const shots = JSON.parse(data.textContent);
+        const image = gallery.querySelector('.gallery-image');
+        const caption = gallery.querySelector('.gallery-caption');
+        const count = gallery.querySelector('.gallery-count');
+        const prev = gallery.querySelector('.gallery-prev');
+        const next = gallery.querySelector('.gallery-next');
+        let index = 0;
+        const show = (newIndex: number) => {
+          index = newIndex;
+          if (image instanceof HTMLImageElement) { image.src = shots[index].src; image.alt = `${gallery.closest('.project-card')?.querySelector('h4')?.textContent}: ${shots[index].caption}`; }
+          if (caption) caption.textContent = shots[index].caption;
+          if (count) count.textContent = `${String(index + 1).padStart(2, '0')} / ${String(shots.length).padStart(2, '0')}`;
+          if (prev instanceof HTMLButtonElement) prev.disabled = index === 0;
+          if (next instanceof HTMLButtonElement) next.disabled = index === shots.length - 1;
+        };
+        prev?.addEventListener('click', () => show(index - 1));
+        next?.addEventListener('click', () => show(index + 1));
+      });
+    </script>
+  </body>
+</html>

@@ -11,28 +11,41 @@ type Project = {
   url: string;
   screenshots: { src: string; caption: string }[];
 };
-const { project } = Astro.props as { project: Project };
+type Labels = {
+  selected: string;
+  impact: string;
+  contribution: string;
+  technologies: string;
+  site: string;
+  openStart: string;
+  openEnd: string;
+  previous: string;
+  next: string;
+  previousAria: string;
+  nextAria: string;
+};
+const { project, labels } = Astro.props as { project: Project; labels: Labels };
 const first = project.screenshots[0];
 const displayShots = project.screenshots.map((shot) => ({ ...shot, src: displayImage(shot.src) }));
 ---
 
 <article class="project-card">
   <div class="project-copy">
-    <div class="project-overline"><span>{project.number} / SELECTED WORK</span><span>{project.category}</span></div>
+    <div class="project-overline"><span>{project.number} / {labels.selected}</span><span>{project.category}</span></div>
     <h4>{project.title}</h4>
     <p class="project-summary">{project.summary}</p>
     <div class="project-detail">
-      <span class="detail-label">DAMPAK</span>
+      <span class="detail-label">{labels.impact}</span>
       <p>{project.impact}</p>
     </div>
     <div class="project-detail">
-      <span class="detail-label">KONTRIBUSI</span>
+      <span class="detail-label">{labels.contribution}</span>
       <p>{project.contribution}</p>
     </div>
-    <ul class="tags" aria-label="Teknologi yang digunakan">
+    <ul class="tags" aria-label={labels.technologies}>
       {project.stack.map((tag) => <li>{tag}</li>)}
     </ul>
-    <a class="text-link" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Buka ${project.title} di tab baru`}>Lihat situs</a>
+    <a class="text-link" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`${labels.openStart} ${project.title} ${labels.openEnd}`}>{labels.site}</a>
   </div>
   <div class="project-visual" data-gallery>
     <div class="browser-frame">
@@ -43,8 +56,8 @@ const displayShots = project.screenshots.map((shot) => ({ ...shot, src: displayI
       <span class="gallery-caption" aria-live="polite">{first.caption}</span>
       <div class="gallery-actions">
         <span class="gallery-count" aria-live="polite">01 / {String(project.screenshots.length).padStart(2, '0')}</span>
-        <button type="button" class="gallery-prev" aria-label={`Screenshot sebelumnya untuk ${project.title}`} disabled>Sebelumnya</button>
-        <button type="button" class="gallery-next" aria-label={`Screenshot berikutnya untuk ${project.title}`}>Berikutnya</button>
+        <button type="button" class="gallery-prev" aria-label={`${labels.previousAria} ${project.title}`} disabled>{labels.previous}</button>
+        <button type="button" class="gallery-next" aria-label={`${labels.nextAria} ${project.title}`}>{labels.next}</button>
       </div>
     </div>
     <script type="application/json" class="gallery-data" set:html={JSON.stringify(displayShots)} />
