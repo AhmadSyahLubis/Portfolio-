@@ -6,7 +6,6 @@ export const profile = {
   linkedin: 'https://linkedin.com/in/ahmadsyahlubis',
   github: 'https://github.com/ahmadsyahlubis',
   instagram: 'https://www.instagram.com/ahmadsyah_62/',
-  cv: '/assets/Ahmad_Syah_Lubis_CV.pdf',
 };
 
 export const displayImage = (path) => path.replace('/assets/', '/assets/optimized/').replace(/\.png$/, '.webp');
@@ -71,7 +70,7 @@ export const experience = [
   {
     period: 'Feb 2025 \u2014 Sekarang',
     role: 'Full Stack Web Developer',
-    company: 'WOKA (Work Assistant) \u00B7 Freelance, Part-time',
+    company: 'WOKA (Work Assistant) \u00B7 Freelance',
     logo: '/assets/logos/woka.png',
     logoVariant: 'wide',
     description: 'Berkolaborasi dari analisis kebutuhan dan perancangan sistem hingga implementasi, deployment, perbaikan, dan pemeliharaan aplikasi web untuk klien.',
@@ -87,9 +86,9 @@ export const experience = [
 
 export const skillGroups = [
   { label: 'Backend & data', skills: ['Laravel', 'Go (Golang)', 'PHP', 'REST API', 'MySQL', 'PostgreSQL', 'Redis'] },
-  { label: 'Frontend web', skills: ['React', 'Astro', 'Vue.js', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'Vite'] },
-  { label: 'Mobile', skills: ['Flutter', 'Dart', 'State Management', 'Responsive UI'] },
-  { label: 'Engineering practices', skills: ['Docker', 'Git / GitHub', 'Testing & debugging', 'CI/CD', 'Deployment'] },
+  { label: 'Frontend web', skills: ['React', 'Astro', 'Vue.js', 'JavaScript', 'Tailwind CSS', 'Vite'] },
+  { label: 'Mobile', skills: ['Flutter', 'Dart', 'Responsive UI'] },
+  { label: 'Engineering practices', skills: ['Docker', 'Git / GitHub', 'Testing & debugging', 'Deployment'] },
 ];
 
 export const certifications = [

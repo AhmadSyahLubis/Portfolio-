@@ -1,7 +1,7 @@
 :root{font-family:'DM Sans',sans-serif;color:#172638;background:#f6f8f8;font-synthesis:none;--navy:#0e1b2a;--navy-soft:#162a3f;--ink:#172638;--muted:#687786;--teal:#29b9a3;--line:#dce4e8;--paper:#f6f8f8}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:112px}
-body{margin:0;min-width:320px}
+body{margin:0}
 body,button,a{font-family:'DM Sans',sans-serif}
 button{cursor:pointer}
 a{color:inherit;text-decoration:none}
@@ -123,7 +123,6 @@ h1 em,h2 em{font-style:normal;color:var(--teal)}
 .text-link--internal{color:#6b7d89;border-bottom:1px solid #c5d0d4;cursor:default}
 .text-link--internal:hover{color:#6b7d89}
 .internal-icon{flex:none}
-.button-icon{flex:none;margin-right:2px}
 .project-visual{background:#dbe5e6;display:flex;flex-direction:column;justify-content:center;padding:40px 34px;min-width:0}
 .browser-frame{border-radius:10px 10px 4px 4px;overflow:hidden;background:#fff;box-shadow:0 20px 45px #0c283741;border:1px solid #afc1c8}
 .browser-top{height:37px;display:flex;align-items:center;gap:10px;background:#f6f8f9;border-bottom:1px solid #d5e0e4;color:#72818c;font-size:10px;font-weight:700;padding:0 13px}
@@ -179,7 +178,7 @@ h1 em,h2 em{font-style:normal;color:var(--teal)}
   .skills-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:760px){
-  html{scroll-padding-top:0}
+  html{scroll-behavior:auto;scroll-padding-top:0}
   .site-header{position:relative;top:auto;padding-top:12px;background:var(--navy)}
   .hero{scroll-margin-top:72px}
   .nav-shell{width:min(100% - 24px,1160px);min-height:62px;padding:8px 10px 8px 14px;gap:10px;border-radius:20px}
@@ -209,9 +208,12 @@ h1 em,h2 em{font-style:normal;color:var(--teal)}
   .portrait-stage img{height:calc(100% + 30px)}
 }
 @media(max-width:360px){
-  .topbar-nav{overflow-x:auto;justify-content:flex-start;scrollbar-width:none}
-  .topbar-nav::-webkit-scrollbar{display:none}
-  .topbar-nav a{flex:none}
+  .nav-shell{align-items:center}
+  .topbar-nav{display:grid;grid-template-columns:repeat(3,max-content);justify-content:space-between;gap:0 8px;overflow:visible}
+  .topbar-nav a{font-size:10.5px;padding:4px 0}
+  .topbar-nav .nav-contact{padding:4px 0}
+  .hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .hero-actions .button{min-width:0;padding-inline:8px;font-size:11px;white-space:nowrap}
 }
 @media(max-width:500px){.hero h1{font-size:clamp(2.4rem,10vw,3.25rem)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}

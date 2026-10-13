@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import ProjectCard from '../components/ProjectCard.astro';
 import { profile, projects, tourismScreenshots, experience, skillGroups, certifications, displayImage, displayLogo } from '../data/portfolio.js';
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href;
+const socialImage = new URL('/assets/optimized/portrait/ahmad-formal-transparent.webp', Astro.site ?? Astro.url).href;
 ---
 
 <!doctype html>
@@ -11,6 +13,7 @@ import { profile, projects, tourismScreenshots, experience, skillGroups, certifi
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0e1b2a" />
     <meta name="description" content="Portfolio Ahmad Syah Lubis, software engineer di Medan dengan keahlian backend, frontend web, dan pengembangan mobile." />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,14 +21,15 @@ import { profile, projects, tourismScreenshots, experience, skillGroups, certifi
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content="Ahmad Syah Lubis — Software Engineer" />
     <meta property="og:description" content="Software Engineer di Medan. Merancang arsitektur sistem, API, dan aplikasi web & mobile untuk kebutuhan bisnis dan organisasi." />
-    <meta property="og:image" content="/assets/optimized/portrait/ahmad-formal-transparent.webp" />
+    <meta property="og:image" content={socialImage} />
     <meta property="og:locale" content="id_ID" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Ahmad Syah Lubis — Software Engineer" />
     <meta name="twitter:description" content="Software Engineer di Medan. Merancang arsitektur sistem, API, dan aplikasi web & mobile untuk kebutuhan bisnis dan organisasi." />
-    <meta name="twitter:image" content="/assets/optimized/portrait/ahmad-formal-transparent.webp" />
+    <meta name="twitter:image" content={socialImage} />
 
     <title>Ahmad Syah Lubis — Software Engineer</title>
   </head>
@@ -47,10 +51,6 @@ import { profile, projects, tourismScreenshots, experience, skillGroups, certifi
             <p class="hero-description">Sebagai Software Engineer, saya merancang arsitektur sistem, baik monolitik maupun microservices, serta mengembangkan API yang terintegrasi dengan aplikasi web dan mobile untuk mendukung kebutuhan bisnis dan organisasi.</p>
             <div class="hero-actions">
               <a class="button button-primary" href="#projects">Jelajahi proyek</a>
-              <a class="button button-secondary" href={profile.cv} download aria-label="Unduh CV Ahmad Syah Lubis dalam format PDF">
-                <svg class="button-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download CV
-              </a>
               <a class="button button-secondary" href={`mailto:${profile.email}`}>Hubungi saya</a>
             </div>
             <div class="hero-proof"><span>01 <small>Backend & API</small></span><span>02 <small>Frontend web</small></span><span>03 <small>Mobile · Flutter</small></span></div>
@@ -97,7 +97,7 @@ import { profile, projects, tourismScreenshots, experience, skillGroups, certifi
               <div class="tourism-gallery">
                 <div class="tourism-gallery-heading"><div><span class="project-brief-label">GALERI PROYEK</span><h5>Cuplikan fitur pariwisata</h5></div><p>Klik gambar untuk melihat tangkapan layar lengkap.</p></div>
                 <div class="tourism-gallery-grid">
-                  {tourismScreenshots.map((shot, index) => <a class:list={['tourism-shot', index === 0 && 'tourism-shot--featured']} href={displayImage(shot.src)} target="_blank" rel="noopener noreferrer" aria-label={`Buka tangkapan layar ${shot.caption} ukuran penuh di tab baru`}>
+                  {tourismScreenshots.map((shot, index) => <a class:list={['tourism-shot', index === 0 && 'tourism-shot--featured']} href={shot.src} target="_blank" rel="noopener noreferrer" aria-label={`Buka tangkapan layar ${shot.caption} ukuran penuh di tab baru`}>
                     <div class="tourism-shot-frame"><img src={displayImage(shot.src)} alt="" loading="lazy" decoding="async" /></div>
                     <span class="tourism-shot-caption"><span>{String(index + 1).padStart(2, '0')} / {shot.caption}</span></span>
                   </a>)}
@@ -109,7 +109,7 @@ import { profile, projects, tourismScreenshots, experience, skillGroups, certifi
       </section>
 
       <section class="section experience-section" id="experience" aria-labelledby="experience-title">
-        <div class="container experience-layout"><div class="experience-intro"><span class="eyebrow"><span class="eyebrow-line"></span> 03 / PERJALANAN</span><h2 id="experience-title">Pengalaman <em>profesional.</em></h2><p>Pengalaman lintas backend, pengembangan web, dan dukungan sistem membentuk cara saya memecahkan masalah secara menyeluruh.</p></div><div class="timeline">{experience.map((job) => <article class="timeline-item"><span class="timeline-period">{job.period}</span><div><div class="timeline-role">{job.logo && <span class:list={['timeline-logo', job.logoVariant === 'wide' && 'timeline-logo--wide']}><img src={displayLogo(job.logo)} alt="" width="88" height="70" loading="lazy" /></span>}<div><h3>{job.role}</h3><p class="timeline-company">{job.company}</p></div></div><p class="timeline-description">{job.description}</p></div></article>)}</div></div>
+        <div class="container experience-layout"><div class="experience-intro"><span class="eyebrow"><span class="eyebrow-line"></span> 03 / PERJALANAN</span><h2 id="experience-title">Pengalaman <em>profesional.</em></h2><p>Pengalaman lintas backend, pengembangan web, dan dukungan sistem membentuk cara saya memecahkan masalah secara menyeluruh.</p></div><div class="timeline">{experience.map((job) => <article class="timeline-item"><span class="timeline-period">{job.period}</span><div><div class="timeline-role">{job.logo && <span class:list={['timeline-logo', job.logoVariant === 'wide' && 'timeline-logo--wide']}><img src={displayLogo(job.logo)} alt="" width="88" height="70" loading="eager" /></span>}<div><h3>{job.role}</h3><p class="timeline-company">{job.company}</p></div></div><p class="timeline-description">{job.description}</p></div></article>)}</div></div>
       </section>
 
       <section class="section skills-section" id="skills" aria-labelledby="skills-title"><div class="container"><div class="section-heading"><div><span class="eyebrow"><span class="eyebrow-line"></span> 04 / TOOLKIT</span><h2 id="skills-title">Keahlian & <em>teknologi.</em></h2></div><p>Perangkat yang saya gunakan untuk membangun backend, frontend web, dan aplikasi mobile.</p></div><div class="skills-grid">{skillGroups.map((group, index) => <div class="skill-card"><span class="skill-number">0{index + 1}</span><h3>{group.label}</h3><ul>{group.skills.map((skill) => <li>{skill}</li>)}</ul></div>)}</div></div></section>
