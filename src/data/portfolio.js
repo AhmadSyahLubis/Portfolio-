@@ -64,7 +64,7 @@ export const experience = [
     role: 'Backend Developer',
     company: 'Dinas Komunikasi dan Informatika Provinsi Sumatera Utara',
     logo: '/assets/logos/pemprov-sumut.png',
-    description: 'Mengembangkan Service Pariwisata sebagai salah satu microservice dalam Superapp SUMUT Cerdas. Service ini menyediakan API untuk destinasi wisata, cagar budaya, kalender event, transportasi publik, akomodasi, dan kuliner, serta fitur nearby berbasis Redis Geospatial.',
+    description: 'Mengembangkan Service Pariwisata dalam ekosistem microservices SUMUT Cerdas. Menangani API katalog wisata, pencarian nearby lintas kategori berbasis Redis Geospatial, serta fitur bookmark dan itinerary dengan autentikasi SSO.',
   },
   {
     period: 'Feb 2025 \u2014 Sekarang',
