@@ -22,7 +22,6 @@ export const projects = [
     contribution: 'Membangun pemeriksaan ketersediaan lintas akun, jadwal terpusat, recurring meeting, dan dashboard cloud recording.',
     stack: ['Laravel 11', 'Livewire 4', 'Alpine.js', 'Tailwind CSS', 'MySQL'],
     url: 'https://ptpn3.co.id/zoom-monitor',
-    internal: true,
     screenshots: [
       { src: '/assets/project/zoom-monitor/login page.png', caption: 'Halaman login' },
       { src: '/assets/project/zoom-monitor/dashboard.png', caption: 'Dashboard monitoring' },
@@ -40,7 +39,6 @@ export const projects = [
     contribution: 'Mengembangkan dashboard, pengelolaan memo dan aplikasi, serta otorisasi untuk admin dan pengguna.',
     stack: ['Laravel', 'Alpine.js', 'Tailwind CSS', 'PostgreSQL'],
     url: 'https://ptpn3.co.id/smart-book',
-    internal: true,
     screenshots: [
       { src: '/assets/project/BRM-QuickAccess/dashboard BRM.png', caption: 'Dashboard Smart Book' },
       { src: '/assets/project/BRM-QuickAccess/memo.png', caption: 'Memo dinas' },

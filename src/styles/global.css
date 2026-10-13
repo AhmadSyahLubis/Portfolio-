@@ -120,9 +120,6 @@ h1 em,h2 em{font-style:normal;color:var(--teal)}
 .tags li{font-size:10px;color:#496473;font-weight:700;padding:6px 9px;border:1px solid #d7e3e5;background:#f6f9f9}
 .text-link{font-size:12px;font-weight:800;color:#0f8f7e;border-bottom:1px solid #0f8f7e;padding-bottom:4px;display:inline-flex;align-items:center;gap:6px}
 .text-link:hover{color:#085b51}
-.text-link--internal{color:#6b7d89;border-bottom:1px solid #c5d0d4;cursor:default}
-.text-link--internal:hover{color:#6b7d89}
-.internal-icon{flex:none}
 .project-visual{background:#dbe5e6;display:flex;flex-direction:column;justify-content:center;padding:40px 34px;min-width:0}
 .browser-frame{border-radius:10px 10px 4px 4px;overflow:hidden;background:#fff;box-shadow:0 20px 45px #0c283741;border:1px solid #afc1c8}
 .browser-top{height:37px;display:flex;align-items:center;gap:10px;background:#f6f8f9;border-bottom:1px solid #d5e0e4;color:#72818c;font-size:10px;font-weight:700;padding:0 13px}

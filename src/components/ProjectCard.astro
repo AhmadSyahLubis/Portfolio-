@@ -9,7 +9,6 @@ type Project = {
   contribution: string;
   stack: string[];
   url: string;
-  internal?: boolean;
   screenshots: { src: string; caption: string }[];
 };
 const { project } = Astro.props as { project: Project };
@@ -33,14 +32,7 @@ const displayShots = project.screenshots.map((shot) => ({ ...shot, src: displayI
     <ul class="tags" aria-label="Teknologi yang digunakan">
       {project.stack.map((tag) => <li>{tag}</li>)}
     </ul>
-    {project.internal ? (
-      <span class="text-link text-link--internal" aria-label={`${project.title} adalah aplikasi internal`}>
-        <svg class="internal-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        Aplikasi internal perusahaan
-      </span>
-    ) : (
-      <a class="text-link" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Buka ${project.title} di tab baru`}>Lihat situs</a>
-    )}
+    <a class="text-link" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Buka ${project.title} di tab baru`}>Lihat situs</a>
   </div>
   <div class="project-visual" data-gallery>
     <div class="browser-frame">
