@@ -117,7 +117,7 @@ export const copy = {
       description: 'As a Software Engineer, I design both monolithic and microservice architectures and build APIs that connect web and mobile applications to the needs of businesses and organizations.',
       projects: 'Explore projects',
       contact: 'Get in touch',
-      cv: 'Download CV (Indonesian PDF)',
+      cv: 'Download CV (PDF)',
       frontend: 'Frontend web',
       scroll: 'SCROLL TO EXPLORE',
       portraitAlt: 'Formal portrait of Ahmad Syah Lubis',

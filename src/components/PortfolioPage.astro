@@ -6,6 +6,8 @@ import { copy } from '../data/i18n.js';
 
 const { lang } = Astro.props as { lang: 'id' | 'en' };
 const t = copy[lang];
+const cvUrl = lang === 'en' ? profile.cvEn : profile.cv;
+const cvFilename = lang === 'en' ? 'Ahmad_Syah_Lubis_CV_EN.pdf' : 'Ahmad_Syah_Lubis_CV.pdf';
 const localizedProjects = lang === 'en' ? projects.map((project, index) => ({
   ...project,
   ...copy.en.projectContent[index],
@@ -66,7 +68,7 @@ const socialImage = new URL('/assets/optimized/portrait/ahmad-formal-transparent
       <div class="container nav-shell">
         <a class="brand" href="#home" aria-label={t.brandAria}><span class="brand-mark">AS<span>.</span></span><span class="brand-name">Ahmad Syah<br />Lubis</span></a>
         <nav class="topbar-nav" aria-label={t.navAria}><a href="#about">{t.nav[0]}</a><a href="#projects">{t.nav[1]}</a><a href="#experience">{t.nav[2]}</a><a href="#certifications">{t.nav[3]}</a><a href="#contact">{t.nav[4]}</a></nav>
-        <nav class="language-switch" aria-label={t.languageAria}><a href="/" data-lang-switch aria-label="Bahasa Indonesia" aria-current={lang === 'id' ? 'page' : undefined}>ID</a><span aria-hidden="true">/</span><a href="/en/" data-lang-switch aria-label="English" aria-current={lang === 'en' ? 'page' : undefined}>EN</a></nav>
+        <nav class="language-switch" aria-label={t.languageAria}><a href="/" data-lang-switch aria-label="Bahasa Indonesia" aria-current={lang === 'id' ? 'page' : undefined}>ID</a><a href="/en/" data-lang-switch aria-label="English" aria-current={lang === 'en' ? 'page' : undefined}>EN</a></nav>
       </div>
     </header>
 
@@ -80,7 +82,7 @@ const socialImage = new URL('/assets/optimized/portrait/ahmad-formal-transparent
             <div class="hero-actions">
               <a class="button button-primary" href="#projects">{t.hero.projects}</a>
               <a class="button button-secondary" href={`mailto:${profile.email}`}>{t.hero.contact}</a>
-              <a class="hero-cv-link" href={profile.cv} download="Ahmad_Syah_Lubis_CV.pdf">{t.hero.cv}</a>
+              <a class="hero-cv-link" href={cvUrl} download={cvFilename}>{t.hero.cv}</a>
             </div>
             <div class="hero-proof"><span>01 <small>Backend & API</small></span><span>02 <small>{t.hero.frontend}</small></span><span>03 <small>Mobile · Flutter</small></span></div>
           </div>

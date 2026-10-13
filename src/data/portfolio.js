@@ -7,6 +7,7 @@ export const profile = {
   github: 'https://github.com/ahmadsyahlubis',
   instagram: 'https://www.instagram.com/ahmadsyah_62/',
   cv: '/assets/Ahmad_Syah_Lubis_CV.pdf',
+  cvEn: '/assets/Ahmad_Syah_Lubis_CV_EN.pdf',
 };
 
 export const displayImage = (path) => path.replace('/assets/', '/assets/optimized/').replace(/\.png$/, '.webp');

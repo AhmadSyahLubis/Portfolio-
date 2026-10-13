@@ -25,9 +25,9 @@ h1,h2,h3{font-family:Manrope,sans-serif}
 .topbar-nav a:after{content:'';position:absolute;left:2px;right:2px;bottom:5px;height:1px;background:#0a7770;transform:scaleX(0);transform-origin:left;transition:transform .2s}
 .topbar-nav a:hover,.topbar-nav a:focus-visible{color:#075e55}
 .topbar-nav a:hover:after,.topbar-nav a:focus-visible:after{transform:scaleX(1)}
-.language-switch{display:flex;align-items:center;gap:3px;flex:none;margin-left:18px;padding-left:16px;border-left:1px solid rgba(27,56,73,.28);color:#304e5d;font-size:12px;font-weight:800}
-.language-switch a{display:grid;place-items:center;min-width:32px;min-height:44px}
-.language-switch a[aria-current="page"]{color:#075e55;text-decoration:underline;text-underline-offset:4px}
+.language-switch{display:grid;grid-template-columns:repeat(2,38px);align-items:center;flex:none;margin-left:18px;padding:3px;border:1px solid rgba(27,56,73,.24);border-radius:999px;background:rgba(28,63,78,.1);color:#304e5d;font-size:11px;font-weight:800}
+.language-switch a{display:grid;place-items:center;min-height:38px;border-radius:999px;transition:background .2s,color .2s,box-shadow .2s}
+.language-switch a[aria-current="page"]{background:#f7fbfb;color:#075e55;box-shadow:0 1px 5px rgba(8,37,50,.15)}
 .language-switch a:hover{color:#075e55}
 .hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
 .hero:before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:#26b49c;filter:blur(170px);opacity:.12;right:-180px;top:50px}
@@ -185,7 +185,7 @@ h1 em,h2 em{font-style:normal;color:var(--teal)}
   .hero{scroll-margin-top:72px}
   .nav-shell{width:min(100% - 24px,1160px);min-height:88px;display:grid;grid-template-columns:1fr auto;align-items:center;padding:8px 14px;gap:2px 12px;border-radius:20px}
   .brand{grid-column:1;grid-row:1}
-  .language-switch{grid-column:2;grid-row:1;margin-left:0;padding-left:0;border-left:0}
+  .language-switch{grid-column:2;grid-row:1;margin-left:0}
   .topbar-nav{grid-column:1/-1;grid-row:2;min-width:0;flex:none;justify-content:space-between;gap:8px;margin-left:0}
   .topbar-nav a{font-size:12px;padding:12px 2px}
   .hero-layout{padding-top:34px;padding-bottom:20px;gap:0}
