@@ -25,7 +25,6 @@ h1,h2,h3{font-family:Manrope,sans-serif}
 .topbar-nav a:after{content:'';position:absolute;left:2px;right:2px;bottom:5px;height:1px;background:#0a7770;transform:scaleX(0);transform-origin:left;transition:transform .2s}
 .topbar-nav a:hover,.topbar-nav a:focus-visible{color:#075e55}
 .topbar-nav a:hover:after,.topbar-nav a:focus-visible:after{transform:scaleX(1)}
-.topbar-nav .nav-contact{display:inline-flex;align-items:center;gap:8px;color:#075e55;font-weight:800}
 .hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
 .hero:before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:#26b49c;filter:blur(170px);opacity:.12;right:-180px;top:50px}
 .hero-layout{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:80px;min-height:705px;padding-top:140px;padding-bottom:64px}
@@ -181,7 +180,6 @@ h1 em,h2 em{font-style:normal;color:var(--teal)}
   .nav-shell{width:min(100% - 24px,1160px);min-height:62px;padding:8px 10px 8px 14px;gap:10px;border-radius:20px}
   .topbar-nav{min-width:0;gap:16px}
   .topbar-nav a{font-size:12px;padding:9px 2px}
-  .topbar-nav .nav-contact{padding:9px 2px}
   .hero-layout{padding-top:34px;padding-bottom:20px;gap:0}
   .hero-content{padding:0}
 }
@@ -192,7 +190,6 @@ h1 em,h2 em{font-style:normal;color:var(--teal)}
   .brand-mark{font-size:20px}
   .topbar-nav{width:auto;min-width:0;flex:1;justify-content:space-between;gap:5px;margin-left:0}
   .topbar-nav a{font-size:clamp(9.5px,2.7vw,10.5px);padding:12px 0}
-  .topbar-nav .nav-contact{padding:12px 0}
   .hero-layout{padding-top:32px;padding-bottom:12px}
   .hero-byline{margin-bottom:25px}
   .hero h1{margin-bottom:19px}
@@ -208,7 +205,6 @@ h1 em,h2 em{font-style:normal;color:var(--teal)}
   .nav-shell{align-items:center}
   .topbar-nav{display:grid;grid-template-columns:repeat(3,max-content);justify-content:space-between;gap:0 8px;overflow:visible}
   .topbar-nav a{font-size:10.5px;padding:4px 0}
-  .topbar-nav .nav-contact{padding:4px 0}
   .hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .hero-actions .button{min-width:0;padding-inline:8px;font-size:11px;white-space:nowrap}
 }
