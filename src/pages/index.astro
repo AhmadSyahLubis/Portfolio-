@@ -52,6 +52,7 @@ const socialImage = new URL('/assets/optimized/portrait/ahmad-formal-transparent
             <div class="hero-actions">
               <a class="button button-primary" href="#projects">Jelajahi proyek</a>
               <a class="button button-secondary" href={`mailto:${profile.email}`}>Hubungi saya</a>
+              <a class="hero-cv-link" href={profile.cv} download="Ahmad_Syah_Lubis_CV.pdf">Unduh CV (PDF)</a>
             </div>
             <div class="hero-proof"><span>01 <small>Backend & API</small></span><span>02 <small>Frontend web</small></span><span>03 <small>Mobile · Flutter</small></span></div>
           </div>
@@ -70,7 +71,7 @@ const socialImage = new URL('/assets/optimized/portrait/ahmad-formal-transparent
       <section class="section about-section" id="about" aria-labelledby="about-title">
         <div class="container about-layout">
           <div class="section-intro"><span class="eyebrow"><span class="eyebrow-line"></span> 01 / TENTANG SAYA</span><h2 id="about-title">Teknologi yang bekerja untuk <em>kebutuhan nyata.</em></h2></div>
-          <div class="about-body"><p>Saya mengembangkan aplikasi untuk layanan publik dan operasional perusahaan, dari perancangan API serta pengelolaan data hingga antarmuka web. Saya juga menggunakan Flutter untuk pengembangan mobile, dengan latar belakang Sistem Informasi yang membantu saya memahami kebutuhan pengguna dan alur kerja di balik sebuah produk.</p><p>Di Dinas Komunikasi dan Informatika Provinsi Sumatera Utara, saya membangun API Pariwisata untuk Superrapp Sumatera Utara, termasuk fitur pencarian lokasi terdekat. Pengalaman bersama WOKA dan PTPN IV Regional I mencakup analisis kebutuhan, pengembangan aplikasi web, pengujian, serta pemeliharaan sistem.</p><div class="education-note"><span class="education-icon" aria-hidden="true"><img src={displayLogo('/assets/logos/potensi-utama.png')} alt="" width="60" height="60" loading="lazy" /></span><div><strong>Sarjana Sistem Informasi</strong><small>Universitas Potensi Utama · 2021–2025 · IPK 3,90/4,00</small></div></div></div>
+          <div class="about-body"><p>Saya mengembangkan aplikasi untuk layanan publik dan operasional perusahaan, dari perancangan API serta pengelolaan data hingga antarmuka web. Saya juga menggunakan Flutter untuk pengembangan mobile, dengan latar belakang Sistem Informasi yang membantu saya memahami kebutuhan pengguna dan alur kerja di balik sebuah produk.</p><p>Di Dinas Komunikasi dan Informatika Provinsi Sumatera Utara, saya mengembangkan Service Pariwisata sebagai salah satu microservice dalam Superapp SUMUT Cerdas, termasuk fitur nearby berbasis Redis Geospatial. Pengalaman bersama WOKA dan PTPN IV Regional I mencakup analisis kebutuhan, pengembangan aplikasi web, pengujian, serta pemeliharaan sistem.</p><div class="education-note"><span class="education-icon" aria-hidden="true"><img src={displayLogo('/assets/logos/potensi-utama.png')} alt="" width="60" height="60" loading="lazy" /></span><div><strong>Sarjana Sistem Informasi</strong><small>Universitas Potensi Utama · 2021–2025 · IPK 3,90/4,00</small></div></div></div>
         </div>
       </section>
 
@@ -92,8 +93,8 @@ const socialImage = new URL('/assets/optimized/portrait/ahmad-formal-transparent
               <p>Pengembangan layanan backend untuk aplikasi publik.</p>
             </div>
             <article class="project-brief">
-              <div class="project-brief-main"><span class="project-brief-label">BACKEND DEVELOPMENT / REST API</span><h4>Superrapp Sumatera Utara</h4><p>Saya mengembangkan API Pariwisata untuk mendukung fitur wisata pada aplikasi Superrapp Sumatera Utara.</p><a class="text-link project-brief-link" href="https://sumutcerdas.web.id/" target="_blank" rel="noopener noreferrer" aria-label="Buka situs SUMUT Cerdas di tab baru">Lihat situs SUMUT Cerdas</a></div>
-              <div class="project-brief-detail"><span>LINGKUP PEKERJAAN</span><p>Modul destinasi wisata, cagar budaya, kalender event, transportasi, kuliner, dan akomodasi.</p><p>Pencarian lokasi terdekat menggunakan Redis Geospatial Index.</p></div>
+              <div class="project-brief-main"><span class="project-brief-label">MICROSERVICE / API PARIWISATA</span><h4>Service Pariwisata untuk SUMUT Cerdas</h4><p>Saya mengembangkan Service Pariwisata sebagai salah satu microservice dalam ekosistem Superapp SUMUT Cerdas. API ini menyediakan data wisata untuk aplikasi web dan mobile.</p><a class="text-link project-brief-link" href="https://sumutcerdas.web.id/" target="_blank" rel="noopener noreferrer" aria-label="Buka situs SUMUT Cerdas di tab baru">Lihat situs SUMUT Cerdas</a></div>
+              <div class="project-brief-detail"><span>CAKUPAN SERVICE</span><p>Enam modul: destinasi wisata, cagar budaya, kalender event, transportasi publik, akomodasi dan hotel, serta kuliner dan restoran di Sumatera Utara.</p><p>Fitur nearby menggunakan Redis Geospatial Index untuk mencari lokasi terdekat berdasarkan koordinat pengguna pada kategori wisata, budaya, transportasi, akomodasi, dan kuliner.</p></div>
               <div class="tourism-gallery">
                 <div class="tourism-gallery-heading"><div><span class="project-brief-label">GALERI PROYEK</span><h5>Cuplikan fitur pariwisata</h5></div><p>Klik gambar untuk melihat tangkapan layar lengkap.</p></div>
                 <div class="tourism-gallery-grid">

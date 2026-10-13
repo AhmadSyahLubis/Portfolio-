@@ -6,6 +6,7 @@ export const profile = {
   linkedin: 'https://linkedin.com/in/ahmadsyahlubis',
   github: 'https://github.com/ahmadsyahlubis',
   instagram: 'https://www.instagram.com/ahmadsyah_62/',
+  cv: '/assets/Ahmad_Syah_Lubis_CV.pdf',
 };
 
 export const displayImage = (path) => path.replace('/assets/', '/assets/optimized/').replace(/\.png$/, '.webp');
@@ -63,7 +64,7 @@ export const experience = [
     role: 'Backend Developer',
     company: 'Dinas Komunikasi dan Informatika Provinsi Sumatera Utara',
     logo: '/assets/logos/pemprov-sumut.png',
-    description: 'Mengembangkan API Pariwisata pada aplikasi Superrapp Sumatera Utara, mencakup modul destinasi wisata, cagar budaya, kalender event, transportasi, kuliner, dan akomodasi. Mengimplementasikan pencarian lokasi terdekat dengan Redis Geospatial Index.',
+    description: 'Mengembangkan Service Pariwisata sebagai salah satu microservice dalam Superapp SUMUT Cerdas. Service ini menyediakan API untuk destinasi wisata, cagar budaya, kalender event, transportasi publik, akomodasi, dan kuliner, serta fitur nearby berbasis Redis Geospatial.',
   },
   {
     period: 'Feb 2025 \u2014 Sekarang',

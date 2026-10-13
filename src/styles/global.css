@@ -43,6 +43,8 @@ h1 em,h2 em{font-style:normal;color:var(--teal)}
 .button-primary:hover{background:#4bdac5}
 .button-secondary{color:#e0ecee;border:1px solid #547080}
 .button-secondary:hover{background:#203a4d}
+.hero-cv-link{display:inline-flex;align-items:center;color:#b8ced4;font-size:12px;font-weight:700;text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+.hero-cv-link:hover{color:#55d7c4}
 .hero-proof{display:flex;gap:29px;border-top:1px solid #33485a;max-width:520px;margin-top:60px;padding-top:24px;color:var(--teal);font-family:Manrope,sans-serif;font-weight:800;font-size:12px}
 .hero-proof span{display:flex;align-items:center;gap:10px;white-space:nowrap}
 .hero-proof small{font-family:'DM Sans',sans-serif;color:#aabcc6;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
@@ -207,6 +209,7 @@ h1 em,h2 em{font-style:normal;color:var(--teal)}
   .topbar-nav a{font-size:10.5px;padding:4px 0}
   .hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .hero-actions .button{min-width:0;padding-inline:8px;font-size:11px;white-space:nowrap}
+  .hero-actions .hero-cv-link{grid-column:1/-1;justify-self:start;margin-top:2px}
 }
 @media(max-width:500px){.hero h1{font-size:clamp(2.4rem,10vw,3.25rem)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
